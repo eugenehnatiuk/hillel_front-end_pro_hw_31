@@ -1,3 +1,5 @@
+@import 'vars';
+
 .head {
   min-height: 80vh;
   // .head__header
@@ -275,10 +277,15 @@
   }
 
   &__menu-item {
-    text-align: center;
-    color: $basic-white;
-    font-weight: 700;
-    font-size: 20px;
-    padding: 7px 0px;
+    
+    & a {
+      display: block;
+      text-align: center;
+      color: $basic-white;
+      font-weight: 700;
+      font-size: 20px;
+      padding: 7px 0px;
+      text-decoration: none;
+    }
   }
 }
