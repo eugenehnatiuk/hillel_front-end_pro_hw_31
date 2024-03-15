@@ -1,0 +1,363 @@
+@font-face {
+  font-family: "Montserrat";
+  src: url("../fonts/Montserrat-Regular.woff") format("woff2");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Montserrat";
+  src: url("../fonts/Montserrat-Bold.woff") format("woff2");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video, button {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+
+body {
+  line-height: 1;
+}
+
+ol, ul {
+  list-style: none;
+}
+
+blockquote, q {
+  quotes: none;
+}
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: "";
+  content: none;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+html, body {
+  scroll-behavior: smooth;
+}
+
+picture {
+  display: inline-block;
+}
+
+body {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 400;
+  position: relative;
+}
+
+.wrapper {
+  background: radial-gradient(circle, #f55c5c 0%, rgb(205, 47, 48) 100%);
+  border-radius: 0 0 12px 12px;
+}
+
+.hidden {
+  width: 0;
+  height: 0;
+  position: absolute;
+  z-index: -10;
+  opacity: 0;
+}
+
+.vertical-separator {
+  display: none;
+  width: 3px;
+  height: 20px;
+  border-radius: 8px;
+  background: #ee981b;
+}
+@media screen and (min-width: 768px) {
+  .vertical-separator {
+    display: block;
+  }
+}
+
+.container {
+  padding: 0 20px;
+}
+@media screen and (min-width: 768px) {
+  .container {
+    max-width: 708px;
+    margin: 0 auto;
+  }
+}
+@media screen and (min-width: 1024px) {
+  .container {
+    max-width: 964px;
+  }
+}
+@media screen and (min-width: 1440px) {
+  .container {
+    max-width: 1380px;
+  }
+}
+@media screen and (min-width: 1920px) {
+  .container {
+    max-width: 1760px;
+  }
+}
+
+.head {
+  min-height: 80vh;
+}
+.header {
+  padding: 20px 0 20px;
+  font-size: 12px;
+}
+.header__upper {
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 2px solid #ee981b;
+  padding-block: 5px;
+}
+.header__contacts {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 10px;
+}
+.header__lang {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.header__lang-link {
+  display: block;
+  color: white;
+  text-decoration: none;
+  transition: color 0.2s ease;
+  text-transform: uppercase;
+  font-weight: 700;
+  font-size: 12px;
+  border-radius: 8px;
+  padding: 7px 3px;
+}
+.header__lang-link:hover {
+  color: #ee981b;
+}
+.header__adress {
+  display: none;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+}
+.header__adress svg {
+  width: 25px;
+  height: 25px;
+  fill: none;
+  stroke: #ee981b;
+}
+.header__adress p {
+  color: white;
+  font-weight: 900;
+}
+@media screen and (min-width: 1024px) {
+  .header__adress {
+    display: flex;
+  }
+}
+.header__phone {
+  text-decoration: none;
+  color: white;
+  font-weight: 900;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+.header__phone svg {
+  width: 25px;
+  height: 25px;
+  fill: #ee981b;
+}
+.header__time {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+.header__time svg {
+  width: 25px;
+  height: 25px;
+  stroke: #ee981b;
+  fill: none;
+}
+.header__time p {
+  color: white;
+  font-weight: 900;
+}
+.header__social {
+  display: none;
+}
+.header__social svg {
+  width: 25px;
+  height: 25px;
+  fill: #ee981b;
+}
+@media screen and (min-width: 1024px) {
+  .header__social {
+    display: block;
+  }
+}
+.header__basket svg {
+  width: 50px;
+  height: 50px;
+  fill: none;
+  stroke: #ee981b;
+}
+.header__box {
+  padding-block: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.header__logo-box {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+.header__logo-img {
+  width: 100px;
+  height: 57px;
+}
+.header__logo-name {
+  font-size: 20px;
+  font-weight: 900;
+  color: white;
+  text-transform: uppercase;
+}
+.header__box-burger {
+  width: 34px;
+  height: 34px;
+  position: relative;
+  cursor: pointer;
+  padding: 5px;
+}
+.header__box-burger::after, .header__box-burger::before,
+.header__box-burger span {
+  border-radius: 12px;
+  position: absolute;
+  content: "";
+  width: 23px;
+  height: 3px;
+  top: 6px;
+  left: 6px;
+  right: 0;
+  background: white;
+}
+.header__box-burger span {
+  top: 49%;
+  transform: translateY(-50%);
+}
+.header__box-burger::after {
+  top: auto;
+  bottom: 7px;
+}
+@media screen and (min-width: 768px) {
+  .header__box-burger {
+    display: none;
+  }
+}
+.header__nav {
+  position: fixed;
+  height: 320px;
+  z-index: 50;
+  padding: 12px 12px;
+  bottom: 0;
+  left: 8px;
+  right: 8px;
+  background: #f55c5c;
+  border-radius: 12px 12px 0 0;
+  transition: transform 0.3s 0.2s linear;
+}
+.header__nav.opend {
+  transform: translateY(0);
+  transition: transform 0.2s linear;
+}
+@media screen and (min-width: 768px) {
+  .header__nav {
+    height: auto;
+    transform: translateY(0);
+    transition: none;
+    padding: 0;
+    position: static;
+    background: transparent;
+    border-radius: 0;
+  }
+}
+.header__nav-close {
+  position: relative;
+  cursor: pointer;
+  width: 30px;
+  height: 30px;
+  margin-left: auto;
+}
+.header__nav-close::after, .header__nav-close::before {
+  content: "";
+  position: absolute;
+  top: 16px;
+  left: 0;
+  right: 0;
+  height: 4px;
+  border-radius: 8px;
+  background: #ee981b;
+  transform: rotate(-45deg);
+}
+.header__nav-close::after {
+  transform: rotate(45deg);
+}
+.header__nav-close.closed::after, .header__nav-close.closed::before {
+  transform: rotate(0deg);
+  transition: transform 0.2s linear;
+}
+@media screen and (min-width: 768px) {
+  .header__nav-close {
+    display: none;
+  }
+}
+.header__menu {
+  display: flex;
+  flex-flow: column;
+  gap: 15px;
+}
+@media screen and (min-width: 768px) {
+  .header__menu {
+    flex-flow: row;
+  }
+}
+.header__menu-item {
+  text-align: center;
+  color: white;
+  font-weight: 700;
+  font-size: 20px;
+  padding: 7px 0px;
+}
+
+/*# sourceMappingURL=style.css.map */

@@ -1,0 +1,284 @@
+.head {
+  min-height: 80vh;
+  // .head__header
+
+  &__header {
+  }
+}
+.header {
+  // background: rgba($color: #ffffff, $alpha: 0.5);
+  padding: 20px 0 20px;
+  font-size: 12px;
+  // .header__container
+
+  &__container {
+  }
+
+  // .header__upper
+
+  &__upper {
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 2px solid $accent-color;
+    padding-block: 5px;
+  }
+
+  // .header__contacts
+
+  &__contacts {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 10px;
+  }
+
+  // .header__lang
+
+  &__lang {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  // .header__lang-item
+
+  &__lang-item {
+  }
+
+  // .header__lang-link
+
+  &__lang-link {
+    display: block;
+    @include base-link;
+    text-transform: uppercase;
+    font-weight: 700;
+    font-size: 12px;
+    // line-height: 15px; // хардкод высоты строки -- плохо, увеличили падиногм
+    border-radius: $radius-sm;
+    padding: 7px 3px;
+  }
+
+  // .header__adress
+
+  &__adress {
+    display: none;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+    & svg {
+      width: 25px;
+      height: 25px;
+      fill: none;
+      stroke: $accent-color;
+    }
+    & p {
+      color: $basic-white;
+      font-weight: 900;
+    }
+    @include viewport-lg {
+      display: flex;
+    }
+  }
+
+  // .header__phone
+
+  &__phone {
+    text-decoration: none;
+    color: $basic-white;
+    font-weight: 900;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    & svg {
+      width: 25px;
+      height: 25px;
+      fill: $accent-color;
+    }
+  }
+  // .header__time
+  &__time {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    & svg {
+      width: 25px;
+      height: 25px;
+      stroke: $accent-color;
+      fill: none;
+    }
+    & p {
+      color: $basic-white;
+      font-weight: 900;
+    }
+  }
+
+  // .header__social
+
+  &__social {
+    display: none;
+    & svg {
+      width: 25px;
+      height: 25px;
+      fill: $accent-color;
+    }
+
+    @include viewport-lg {
+      display: block;
+    }
+  }
+
+  // .header__basket
+
+  &__basket {
+    & svg {
+      width: 50px;
+      height: 50px;
+      fill: none;
+      stroke: $accent-color;
+    }
+  }
+
+  // .header__box
+
+  &__box {
+    padding-block: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  &__logo-box {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+  }
+
+  &__logo-img {
+    width: 100px;
+    height: 57px;
+  }
+
+  &__logo-name {
+    font-size: 20px;
+    font-weight: 900;
+    color: $basic-white;
+    text-transform: uppercase;
+  }
+
+  &__box-burger {
+    width: 34px;
+    height: 34px;
+    position: relative;
+    cursor: pointer;
+    padding: 5px;
+
+    &::after,
+    &::before,
+    span {
+      border-radius: $radius-md;
+      position: absolute;
+      content: '';
+      width: 23px;
+      height: 3px;
+      top: 6px;
+      left: 6px;
+      right: 0;
+      background: $basic-white;
+    }
+
+    span {
+      top: 49%;
+      transform: translateY(-50%);
+    }
+
+    &::after {
+      top: auto;
+      bottom: 7px;
+    }
+
+    @include viewport-md {
+      display: none;
+    }
+  }
+
+  &__nav {
+    position: fixed;
+    height: 320px;
+    z-index: 50;
+    padding: 12px 12px;
+    bottom: 0;
+    left: 8px;
+    right: 8px;
+    background: #f55c5c;
+    border-radius: $radius-md $radius-md 0 0;
+    // transform: translateY(101%);
+    transition: transform 0.3s 0.2s linear;
+
+    &.opend {
+      transform: translateY(0);
+      transition: transform 0.2s linear;
+    }
+
+    @include viewport-md {
+      height: auto;
+      transform: translateY(0);
+      transition: none;
+      padding: 0;
+      position: static;
+      background: transparent;
+      border-radius: 0;
+    }
+  }
+
+  &__nav-close {
+    position: relative;
+    cursor: pointer;
+    width: 30px;
+    height: 30px;
+    margin-left: auto;
+
+    &::after,
+    &::before {
+      content: '';
+      position: absolute;
+      top: 16px;
+      left: 0;
+      right: 0;
+      height: 4px;
+      border-radius: $radius-sm;
+      background: $accent-color;
+      transform: rotate(-45deg);
+    }
+    &::after {
+      transform: rotate(45deg);
+    }
+    &.closed::after,
+    &.closed::before {
+      transform: rotate(0deg);
+      transition: transform 0.2s linear;
+    }
+
+    @include viewport-md {
+      display: none;
+    }
+  }
+
+  &__menu {
+    display: flex;
+    flex-flow: column;
+    gap: 15px;
+
+    @include viewport-md {
+      flex-flow: row;
+    }
+  }
+
+  &__menu-item {
+    text-align: center;
+    color: $basic-white;
+    font-weight: 700;
+    font-size: 20px;
+    padding: 7px 0px;
+  }
+}

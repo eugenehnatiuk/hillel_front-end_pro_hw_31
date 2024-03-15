@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hillel Front-End Pro</title>
+    <link rel="shortcut icon" type="image/png" href="./favicon.png">
+    <link rel="stylesheet" href="/src/style/style.css">
+</head>
+
+<body>
+    <div class="wrapper">
+        <div class="head">
+            <header class="head__header header">
+                <div class="header__container container">
+                    <div class="header__upper">
+                        <div class="header__contacts">
+                            <ul class="header__lang">
+                                <li class="header__lang-item"><a href="#" class="header__lang-link">ua</a></li>
+                                <li class="header__lang-item"><a href="#" class="header__lang-link">en</a></li>
+                            </ul>
+                            <!-- <span class="vertical-separator"></span> -->
+                            <div class="header__adress">
+                                <svg>
+                                    <use href="#location"></use>
+                                </svg>
+                                <p>Kyiv, Mechnikova str., 14/1</p>
+                            </div>
+                            <!-- <span class="vertical-separator"></span> -->
+                            <a class="header__phone" href="tel: +308001234567"><svg>
+                                    <use href="#phone"></use>
+                                </svg> 0800 123 45 67</a>
+                            <!-- <span class="vertical-separator"></span> -->
+                            <div class="header__time">
+                                <svg>
+                                    <use href="#clock"></use>
+                                </svg>
+                                <p>08:30 - 22:00</p>
+                            </div>
+                            <!-- <span class="vertical-separator"></span> -->
+                            <a class="header__social" href="#"><svg>
+                                    <use href="#facebook"></use>
+                                </svg></a>
+                        </div>
+                        <!-- Basket -->
+                        <div class="header__basket basket">
+                            <svg>
+                                <use href="#basket"></use>
+                            </svg>
+                        </div>
+
+                    </div>
+                    <div class="header__box">
+                        <div class="header__logo-box">
+                            <img class="header__logo-img" src="./images/Pizza_logo.png" alt="Pizza logo" width="100"
+                                height="57">
+                            <p class="header__logo-name">Pizza House</p>
+                        </div>
+                        <div class="header__box-burger">
+                            <span></span>
+                        </div>
+                        <nav class="header__nav">
+                            <div class="header__nav-close"></div>
+                            <ul class="header__menu">
+                                <li class="header__menu-item">Main</li>
+                                <li class="header__menu-item">Menu</li>
+                                <li class="header__menu-item">About us</li>
+                                <li class="header__menu-item">Contacts</li>
+                            </ul>
+                        </nav>
+                    </div>
+                </div>
+            </header>
+        </div>
+    </div>
+    <main>
+
+    </main>
+
+    <!-- <script src="index.js"></script> -->
+    <svg xmlns="http://www.w3.org/2000/svg" class="hidden">
+
+        <!-- Facebook -->
+        <symbol viewBox="0 0 24 25" id="facebook">
+            <g clip-path="url(#a)">
+                <path
+                    d="M24 12.573C24 5.905 18.627.5 12 .5S0 5.905 0 12.573C0 18.6 4.388 23.594 10.125 24.5v-8.437H7.078v-3.49h3.047v-2.66c0-3.025 1.791-4.697 4.533-4.697 1.313 0 2.686.236 2.686.236v2.971H15.83c-1.491 0-1.956.93-1.956 1.886v2.264h3.328l-.532 3.49h-2.796V24.5C19.612 23.594 24 18.6 24 12.573Z" />
+            </g>
+            <defs>
+                <clipPath id="a">
+                    <path d="M0 .5h24v24H0z" />
+                </clipPath>
+            </defs>
+        </symbol>
+
+        <!-- Phone -->
+        <symbol viewBox="0 0 24 24" id="phone">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                d="M3 5.5C3 14.06 9.94 21 18.5 21c.386 0 .77-.014 1.148-.042.435-.032.653-.048.851-.162a1.06 1.06 0 0 0 .402-.432c.099-.206.099-.446.099-.926v-2.817c0-.404 0-.606-.067-.779a.999.999 0 0 0-.277-.396c-.14-.122-.33-.191-.71-.329l-3.206-1.166c-.441-.16-.662-.24-.872-.227a1 1 0 0 0-.513.182c-.171.121-.292.322-.534.725L14 16a12.1 12.1 0 0 1-6-6l1.369-.821c.402-.242.604-.363.725-.534a1 1 0 0 0 .182-.513c.014-.21-.066-.43-.227-.872L8.883 4.053c-.138-.38-.207-.569-.329-.709a1 1 0 0 0-.396-.278C7.985 3 7.783 3 7.379 3H4.562c-.48 0-.72 0-.926.1a1.06 1.06 0 0 0-.432.401c-.114.198-.13.416-.162.85C3.014 4.732 3 5.115 3 5.5Z" />
+        </symbol>
+
+        <!-- Location -->
+        <symbol viewBox="0 0 24 24" id="location">
+            <path
+                d="M12 21C15.5 17.4 19 14.1764 19 10.2C19 6.22355 15.866 3 12 3C8.13401 3 5 6.22355 5 10.2C5 14.1764 8.5 17.4 12 21Z"
+                stroke="$accent-color" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+            <path
+                d="M12 12C13.1046 12 14 11.1046 14 10C14 8.89543 13.1046 8 12 8C10.8954 8 10 8.89543 10 10C10 11.1046 10.8954 12 12 12Z"
+                stroke="$accent-color" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+        </symbol>
+
+        <!-- Clock -->
+        <symbol viewBox="0 0 24 24" id="clock">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                d="M12 7v5l-2.5 1.5M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" />
+        </symbol>
+
+        <!-- Basket -->
+        <symbol viewBox="0 0 24 24" id="basket">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                d="m20 10-1.485 7.428c-.184.916-.275 1.374-.515 1.717a2 2 0 0 1-.839.688c-.383.167-.85.167-1.784.167H8.623c-.934 0-1.401 0-1.784-.167a2 2 0 0 1-.84-.688c-.239-.343-.33-.801-.513-1.717L4 10m16 0h-2m2 0h1M4 10H3m1 0h2m0 0h12M6 10l3-6m9 6-3-6m-6 9v3m3-3v3m3-3v3" />
+        </symbol>
+    </svg>
+</body>
+
+</html>
