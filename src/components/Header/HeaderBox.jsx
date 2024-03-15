@@ -1,9 +1,16 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import './header.scss'
-
+import './header.scss';
+import { useState } from 'react';
 
 const HeaderBox = () => {
+  const [closeMenu, setCloseMenu] = useState(false);
+  const [openMenu, setOpenMenu] = useState(false);
+
+  const toggleMenu = () => {
+    setCloseMenu(true);
+  };
+
   return (
     <div className="header__box">
       <div className="header__logo-box">
@@ -16,11 +23,19 @@ const HeaderBox = () => {
         ></img>
         <p className="header__logo-name">Pizza House</p>
       </div>
-      <div className="header__box-burger">
+      <div className="header__box-burger" onClick={() => setCloseMenu(false)}>
         <span></span>
       </div>
-      <nav className="header__nav">
-        <div className="header__nav-close"></div>
+      <nav
+        className="header__nav"
+        style={{ transform: closeMenu ? 'translateY(101%)' : 'none' }}
+      >
+        <div
+          className={
+            closeMenu ? 'header__nav-close closed' : 'header__nav-close'
+          }
+          onClick={toggleMenu}
+        ></div>
         <ul className="header__menu">
           <li className="header__menu-item">
             <Link to="/">Main</Link>
