@@ -2,6 +2,9 @@
 
 .head {
   min-height: 80vh;
+  background: radial-gradient(circle, #f55c5c 0%, rgba(205, 47, 48, 1) 100%);
+  border-radius: 0 0 $radius-md $radius-md;
+  padding: 0 0 25px 0;
   // .head__header
 
   &__header {
@@ -153,7 +156,11 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    flex-flow: column;
     gap: 10px;
+    @include viewport-md {
+      flex-flow: row;
+    }
   }
 
   &__logo-img {
@@ -214,10 +221,10 @@
     right: 8px;
     background: #f55c5c;
     border-radius: $radius-md $radius-md 0 0;
-    // transform: translateY(101%);
+    transform: translateY(101%);
     transition: transform 0.3s 0.2s linear;
 
-    &.opend {
+    &.opened {
       transform: translateY(0);
       transition: transform 0.2s linear;
     }
@@ -277,7 +284,6 @@
   }
 
   &__menu-item {
-    
     & a {
       display: block;
       text-align: center;
@@ -286,6 +292,12 @@
       font-size: 20px;
       padding: 7px 0px;
       text-decoration: none;
+      &.active {
+        color: $accent-color;
+      }
+    }
+    & :hover{
+      text-decoration: underline;
     }
   }
 }

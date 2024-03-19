@@ -2,7 +2,7 @@ import fastify from 'fastify';
 import fastifyStatic from '@fastify/static';
 import { join, dirname } from 'path';
 import { fileURLToPath } from 'url';
-import { request } from 'http';
+
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
@@ -13,6 +13,10 @@ const server = fastify();
 server.register(fastifyStatic, {
   root: join(__dirname, '../build'),
 });
+
+server.setNotFoundHandler((_, relply) => {
+  return relply.sendFile('index.html')
+})
 
 /* server.get('/hello', async (_, reply) => {
   reply.send({ message: 'Hello pizza lover' });

@@ -1,17 +1,11 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
+import React, { useState }  from 'react';
+import { NavLink } from 'react-router-dom';
 import './header.scss';
-import { useState } from 'react';
 
 const HeaderBox = () => {
-  const [closeMenu, setCloseMenu] = useState(false);
-  const [openMenu, setOpenMenu] = useState(false);
+  const [closeMenu, setCloseMenu] = useState(true);
 
-  const toggleMenu = () => {
-    setCloseMenu(true);
-  };
-
-  return (
+   return (
     <div className="header__box">
       <div className="header__logo-box">
         <img
@@ -26,28 +20,25 @@ const HeaderBox = () => {
       <div className="header__box-burger" onClick={() => setCloseMenu(false)}>
         <span></span>
       </div>
-      <nav
-        className="header__nav"
-        style={{ transform: closeMenu ? 'translateY(101%)' : 'none' }}
-      >
+      <nav className={closeMenu ? 'header__nav' : 'header__nav opened'}>
         <div
           className={
             closeMenu ? 'header__nav-close closed' : 'header__nav-close'
           }
-          onClick={toggleMenu}
+          onClick={() => setCloseMenu(true)}
         ></div>
         <ul className="header__menu">
           <li className="header__menu-item">
-            <Link to="/">Main</Link>
+            <NavLink to="/">Main</NavLink>
           </li>
           <li className="header__menu-item">
-            <Link to="/menu">Menu</Link>
+            <NavLink to="/menu">Menu</NavLink>
           </li>
           <li className="header__menu-item">
-            <Link to="/about">About us</Link>{' '}
+            <NavLink to="/about">About us</NavLink>
           </li>
           <li className="header__menu-item">
-            <Link to="contacts">Contacts</Link>{' '}
+            <NavLink to="contacts">Contacts</NavLink>
           </li>
         </ul>
       </nav>
