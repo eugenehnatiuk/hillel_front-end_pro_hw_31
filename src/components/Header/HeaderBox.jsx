@@ -1,11 +1,15 @@
-import React, { useState }  from 'react';
+import React from 'react';
 import { NavLink } from 'react-router-dom';
 import './header.scss';
 
-const HeaderBox = () => {
-  const [closeMenu, setCloseMenu] = useState(true);
+import { useDispatch, useSelector } from 'react-redux';
+import {close, open} from '../../Redux/closeMenuSlice.js'
 
-   return (
+const HeaderBox = () => {
+  const dispatch = useDispatch();
+  const isClose = useSelector((state) => state.closeMenu.value);
+
+  return (
     <div className="header__box">
       <div className="header__logo-box">
         <img
@@ -17,15 +21,16 @@ const HeaderBox = () => {
         ></img>
         <p className="header__logo-name">Pizza House</p>
       </div>
-      <div className="header__box-burger" onClick={() => setCloseMenu(false)}>
+      <div
+        className="header__box-burger"
+        onClick={() => dispatch(open())}
+      >
         <span></span>
       </div>
-      <nav className={closeMenu ? 'header__nav' : 'header__nav opened'}>
+      <nav className={isClose ? 'header__nav' : 'header__nav opened'}>
         <div
-          className={
-            closeMenu ? 'header__nav-close closed' : 'header__nav-close'
-          }
-          onClick={() => setCloseMenu(true)}
+          className={isClose ? 'header__nav-close closed' : 'header__nav-close'}
+          onClick={() => dispatch(close())}
         ></div>
         <ul className="header__menu">
           <li className="header__menu-item">

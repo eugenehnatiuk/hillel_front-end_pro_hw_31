@@ -8,7 +8,7 @@
     "sass:watch": "sass --watch src/style/style.scss:src/style/style.css",
     "watch:client": "webpack --watch",
     "watch:server": "nodemon server/index.mjs",
-    "serve": "webpack serve",
+    "serve": "webpack serve --env mode=development",
     "build": "webpack",
     "build:prod": "webpack -- --env mode=production",
     "start": "npm-run-all --parallel watch:client watch:server"
@@ -50,10 +50,13 @@
   },
   "dependencies": {
     "@babel/preset-react": "^7.23.3",
+    "@reduxjs/toolkit": "^2.2.2",
     "path": "^0.12.7",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
+    "react-redux": "^9.1.0",
     "react-router-dom": "^6.22.3",
+    "redux": "^5.0.1",
     "swiper": "^11.0.7"
   }
 }

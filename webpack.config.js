@@ -56,7 +56,7 @@ module.exports = (env) => {
           test: /\.s[ac]ss$/i,
           use: [
             MiniCssExtractPlugin.loader, // for using 'style-loader' in order to inline <style> in html change MiniCssExtractPlugin.loader to style-loader
-            { loader: 'css-loader', options: { sourceMap: true } },
+            { loader: 'css-loader', options: { sourceMap: true, url: false } },
             { loader: 'sass-loader', options: { sourceMap: true } },
           ],
           include: [
@@ -67,8 +67,7 @@ module.exports = (env) => {
         {
           test: /\.jsx?$/,
           exclude: /node_modules/,
-          use: !isDev
-            ? {
+          use: {
                 loader: 'babel-loader',
                 options: {
                   presets: [
@@ -88,7 +87,7 @@ module.exports = (env) => {
                   ],
                 },
               }
-            : [], // undefined
+             
         },
         // {
         //   test: /\.(woff|woff2|ttf|otf|eot)$/,

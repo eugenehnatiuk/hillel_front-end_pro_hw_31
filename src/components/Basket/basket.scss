@@ -1,0 +1,34 @@
+@import 'vars';
+
+.header {
+  // .header__basket
+
+  &__basket {
+    cursor: pointer;
+    position: relative;
+    & svg {
+      width: 50px;
+      height: 50px;
+      fill: none;
+      stroke: $accent-color;
+    }
+  }
+  .basket {
+    // .basket__counter
+
+    &__counter {
+        text-align: center;
+      font-weight: 700;
+      font-size: 15px;
+      display: inline-block;
+      width: 15px;
+      height: 15px;
+      background: white;
+      color: black;
+      border-radius: 50%;
+      position: absolute;
+      bottom: 3px;
+      right: 3px;
+    }
+  }
+}

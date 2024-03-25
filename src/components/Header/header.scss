@@ -1,10 +1,12 @@
 @import 'vars';
 
 .head {
-  min-height: 80vh;
-  background: radial-gradient(circle, #f55c5c 0%, rgba(205, 47, 48, 1) 100%);
-  border-radius: 0 0 $radius-md $radius-md;
-  padding: 0 0 25px 0;
+  position: relative;
+  // min-height: 80vh;
+  background: linear-gradient(to right, #f55c5c 0%, #cd2f30 100%);
+  // border-radius: 0 0 $radius-md $radius-md;
+  // padding: 0 0 25px 0;
+  margin-bottom: 50px;
   // .head__header
 
   &__header {
@@ -296,8 +298,31 @@
         color: $accent-color;
       }
     }
-    & :hover{
+    & :hover {
       text-decoration: underline;
     }
   }
+}
+
+
+.custom-shape-divider-bottom {
+    position: absolute;
+    bottom: -66px;
+    left: 0;
+    width: 100%;
+    overflow: hidden;
+    line-height: 0;
+    transform: rotate(360deg);
+}
+
+.custom-shape-divider-bottom svg {
+    position: relative;
+    display: block;
+    width: calc(100% + 1.3px);
+    height: 67px;
+    
+}
+
+.custom-shape-divider-bottom .shape-fill {
+    fill: url(#gradient);
 }

@@ -1,18 +1,28 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import './banner.scss';
 
 import { register } from 'swiper/element/bundle';
+
 register();
 
 const Banner = () => {
+  useEffect(() => {
+    const swiperContainer = document.querySelector('swiper-container');
+    const style = document.createElement('style');
+    style.textContent = `
+  .swiper {
+    overflow: visible !important;
+  }
+`;
+    if (swiperContainer) {
+      swiperContainer.shadowRoot.appendChild(style);
+    }
+  }, []);
+
   return (
     <div className="banner container">
       <swiper-container
-        style={{
-          '--swiper-navigation-color': '#fff',
-          '--swiper-pagination-color': '#fff',
-        }}
-        className="banner__swiprer"
+        className="banner__swiper"
         loop="true"
         pagination="true"
         // pagination-dynamic-bullets="true"
@@ -25,7 +35,7 @@ const Banner = () => {
                 src="../../images/pizza_cola.webp"
                 alt="Pizza & Cola Banner"
                 width={800}
-                height={400}
+                height={300}
               />
             </div>
             <div className="banner__inner">

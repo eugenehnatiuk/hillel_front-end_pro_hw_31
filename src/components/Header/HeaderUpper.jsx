@@ -1,8 +1,8 @@
 import React from 'react';
-
+import Basket from '../Basket/Basket.jsx';
 
 const HeaderUpper = () => {
-  return(
+  return (
     <div className="header__upper">
       <div className="header__contacts">
         <ul className="header__lang">
@@ -41,14 +41,14 @@ const HeaderUpper = () => {
           </svg>
         </a>
       </div>
-      <div className="header__basket basket">
+      <Basket />
+      {/* <div className="header__basket basket">
         <svg>
           <use href="#basket"></use>
         </svg>
-      </div>
+      </div> */}
     </div>
   );
 };
 
-
-export default HeaderUpper
+export default HeaderUpper;

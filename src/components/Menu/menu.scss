@@ -1,0 +1,36 @@
+@import '/src/style/vars';
+
+.menu {
+  //.menu__section
+  &__section {
+    text-align: center;
+  }
+
+  &__category-box {
+   
+  }
+
+  // .menu__title
+
+  &__title {
+    padding: 20px;
+  }
+
+  // .menu__list
+
+  &__category-list {
+     display: flex;
+     justify-content: center;
+     align-items: center;
+     gap: 10px;
+  }
+
+  // .menu__list-item
+
+  &__category-item {
+  }
+
+  &__category-link{
+    display: block;
+  }
+}
