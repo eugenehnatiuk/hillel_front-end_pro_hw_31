@@ -2,7 +2,9 @@ import fastify from 'fastify';
 import fastifyStatic from '@fastify/static';
 import { join, dirname } from 'path';
 import { fileURLToPath } from 'url';
+import productList from './dbProductlist.mjs';
 
+const products = productList;
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
@@ -15,8 +17,8 @@ server.register(fastifyStatic, {
 });
 
 server.setNotFoundHandler((_, relply) => {
-  return relply.sendFile('index.html')
-})
+  return relply.sendFile('index.html');
+});
 
 /* server.get('/hello', async (_, reply) => {
   reply.send({ message: 'Hello pizza lover' });

@@ -1,0 +1,33 @@
+.footer {
+  text-align: center;
+  background: linear-gradient(to right, #f55c5c 0%, #cd2f30 100%);
+  color: white;
+  // .footer__container
+  &__container {
+  }
+
+  // .footer__contacts-list
+
+  &__contacts-list {
+    padding: 50px 0;
+  }
+
+  // .footer__contacts-item
+
+  &__contacts-item {
+  }
+
+  &__adress {
+    margin-bottom: 10px;
+  }
+
+  &__phone {
+    text-decoration: none;
+    color: white;
+  }
+
+  &__rights {
+    font-size: 12px;
+    padding: 0 0 20px;
+  }
+}

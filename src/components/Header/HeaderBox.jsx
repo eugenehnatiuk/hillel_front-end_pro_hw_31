@@ -3,7 +3,8 @@ import { NavLink } from 'react-router-dom';
 import './header.scss';
 
 import { useDispatch, useSelector } from 'react-redux';
-import {close, open} from '../../Redux/closeMenuSlice.js'
+import { close, open } from '../../Redux/closeMenuSlice.js';
+
 
 const HeaderBox = () => {
   const dispatch = useDispatch();
@@ -21,10 +22,7 @@ const HeaderBox = () => {
         ></img>
         <p className="header__logo-name">Pizza House</p>
       </div>
-      <div
-        className="header__box-burger"
-        onClick={() => dispatch(open())}
-      >
+      <div className="header__box-burger" onClick={() => dispatch(open())}>
         <span></span>
       </div>
       <nav className={isClose ? 'header__nav' : 'header__nav opened'}>
@@ -34,16 +32,24 @@ const HeaderBox = () => {
         ></div>
         <ul className="header__menu">
           <li className="header__menu-item">
-            <NavLink to="/">Main</NavLink>
+            <NavLink to="/" onClick={() => dispatch(close())}>
+              Main
+            </NavLink>
           </li>
           <li className="header__menu-item">
-            <NavLink to="/menu">Menu</NavLink>
+            <NavLink to="/menu" onClick={() => dispatch(close())}>
+              Menu
+            </NavLink>
           </li>
           <li className="header__menu-item">
-            <NavLink to="/about">About us</NavLink>
+            <NavLink to="/about" onClick={() => dispatch(close())}>
+              About us
+            </NavLink>
           </li>
           <li className="header__menu-item">
-            <NavLink to="contacts">Contacts</NavLink>
+            <NavLink to="contacts" onClick={() => dispatch(close())}>
+              Contacts
+            </NavLink>
           </li>
         </ul>
       </nav>

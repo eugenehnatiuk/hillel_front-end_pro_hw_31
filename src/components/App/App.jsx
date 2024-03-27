@@ -1,20 +1,24 @@
 import React from 'react';
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 
+import { Provider } from 'react-redux';
+import { configureStore } from '@reduxjs/toolkit';
+import BannerMenu from '../Menu/MenuBanner.jsx';
+import closeMenuSlice from '../../Redux/closeMenuSlice.js';
+import hideBannerSlice from '../../Redux/hideBannerSlice.js';
+import sizeChangeSlice from '../../Redux/sizeChangeSlice.js';
+
 import Menu from '../Menu/Menu.jsx';
 import Contacts from '../Contacts/Contacts.jsx';
 import About from '../AboutUs/About.jsx';
-import Homepage from '../Homepage/Homepage.jsx';
 import Layout from './Layout.jsx';
-import BannerMenu from '../Menu/MenuBanner.jsx';
-
-import { Provider } from 'react-redux';
-import { configureStore } from '@reduxjs/toolkit';
-import closeMenuSlice from '../../Redux/closeMenuSlice.js';
+import Productlist from '../Menu/Productlist.jsx';
 
 const store = configureStore({
   reducer: {
     closeMenu: closeMenuSlice,
+    hideBanner: hideBannerSlice,
+    productSize: sizeChangeSlice,
   },
 });
 
@@ -23,8 +27,26 @@ const router = createBrowserRouter([
     path: '/',
     element: <Layout />,
     children: [
+      // {
+      // path: '/',
+      // element: <Menu />,
+      // children: [
+      // {
+      //   index: true,
+      //   element: <BannerMenu />,
+      // },
+      // {
+      //   path: 'pizzas_menu',
+      //   element: <Productlist />,
+      // },
+      // {
+      //   path: 'soft_drinks_menu',
+      //   element: 'This is soft drinks',
+      // },
+      // ],
+      // },
       {
-        index: true,
+        path: 'menu',
         element: <Menu />,
         children: [
           {
@@ -32,39 +54,21 @@ const router = createBrowserRouter([
             element: <BannerMenu />,
           },
           {
-            path: 'pizzas-menu',
-            element: 'This is pizzas',
+            path: 'pizzas_menu',
+            element: <Productlist />,
           },
           {
-            path: 'soft-drinks-menu',
-            element: ' This is soft drinks',
+            path: 'soft_drinks_menu',
+            element: 'This is soft drinks',
           },
         ],
       },
-      // {
-      //   path: 'menu',
-      //   element: <Menu />,
-      //   children: [
-      //     {
-      //       index: true,
-      //       element: <BannerMenu />,
-      //     },
-      //     {
-      //       path: 'pizzas-menu',
-      //       element: 'This is pizzas',
-      //     },
-      //     {
-      //       path: 'soft-drinks-menu',
-      //       element: ' This is soft drinks',
-      //     },
-      //   ],
-      // },
       {
-        path: '/about',
+        path: 'about',
         element: <About />,
       },
       {
-        path: '/contacts',
+        path: 'contacts',
         element: <Contacts />,
       },
       {

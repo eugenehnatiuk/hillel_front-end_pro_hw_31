@@ -1,12 +1,27 @@
 import './header.scss';
 
-import React from 'react';
+import React, { useEffect } from 'react';
 import HeaderUpper from './HeaderUpper.jsx';
 import HeaderBox from './HeaderBox.jsx';
 import Banner from '../Banner/Banner.jsx';
 import { ShapeDevider } from '../ShapeDivider/ShapeDivider.jsx';
+import { useDispatch, useSelector } from 'react-redux';
+import { useLocation } from 'react-router-dom';
+import { bannerHide, bannerShow } from '../../Redux/hideBannerSlice.js';
 
 const Header = () => {
+  const isHidden = useSelector((state) => state.hideBanner.value);
+  const location = useLocation();
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    if (location.pathname === '/about') {
+      dispatch(bannerHide());
+    } else {
+      dispatch(bannerShow());
+    }
+  }, [location.pathname]);
+
   return (
     <>
       <div className="head">
@@ -16,7 +31,7 @@ const Header = () => {
             <HeaderBox />
           </div>
         </header>
-        <Banner />
+        {isHidden ? '' : <Banner />}
         <ShapeDevider />
       </div>
     </>

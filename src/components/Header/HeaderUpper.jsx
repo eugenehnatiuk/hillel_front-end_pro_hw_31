@@ -42,11 +42,6 @@ const HeaderUpper = () => {
         </a>
       </div>
       <Basket />
-      {/* <div className="header__basket basket">
-        <svg>
-          <use href="#basket"></use>
-        </svg>
-      </div> */}
     </div>
   );
 };

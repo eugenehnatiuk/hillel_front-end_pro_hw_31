@@ -4,10 +4,10 @@
   //.menu__section
   &__section {
     text-align: center;
+    margin-bottom: 30px;
   }
 
   &__category-box {
-   
   }
 
   // .menu__title
@@ -19,10 +19,10 @@
   // .menu__list
 
   &__category-list {
-     display: flex;
-     justify-content: center;
-     align-items: center;
-     gap: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
   }
 
   // .menu__list-item
@@ -30,7 +30,51 @@
   &__category-item {
   }
 
-  &__category-link{
+  &__category-link {
     display: block;
   }
+}
+
+
+
+.products {
+
+		// .products__card
+
+		&__card {
+		}
+}
+
+.card {
+  max-width: 292px;
+  padding: 5px;
+		// .card__image
+
+		&__image {
+		}
+
+		// .card__content
+
+		&__content {
+		}
+
+		// .card__title
+
+		&__title {
+		}
+
+		// .card__sizes
+
+		&__sizes {
+		}
+
+		// .card__price
+
+		&__price {
+		}
+
+		// .card__addBtn
+
+		&__addBtn {
+		}
 }
