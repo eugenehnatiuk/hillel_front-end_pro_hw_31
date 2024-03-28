@@ -24,16 +24,16 @@ const ProductCategory = ({ productCategory }) => {
   return (
     <div className="products container">
       {productsList &&
-        productsList.forEach((product) => {
+        productsList.map((product) => 
           <ProductCard
             key={product.id}
             id={product.id}
             name={product.name}
             sizes={product.sizes}
-            prices={product.prices}
+            // prices={product.prices}
             image={product.image}
-          />;
-        })}
+          />
+        )}
     </div>
   );
 };

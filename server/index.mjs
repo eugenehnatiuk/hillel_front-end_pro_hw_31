@@ -32,7 +32,7 @@ server.get('/products/', async (request, reply) => {
         .code(404)
         .send({ error: `No products found for category: ${productCategory}` });
     }
-   
+    reply.header('Content-Type', 'application/json');
     reply.send(filteredProducts);
   } catch (error) {
     reply.code(500).send({ error: 'Internal server error' });
@@ -57,7 +57,7 @@ server.post('/order', (request, reply) => {
   }
 }); */
 
-const port = process.env.PORT || 5000;
+const port = process.env.PORT || 7000;
 const host = process.env.HOST || '127.0.0.1';
 
 server

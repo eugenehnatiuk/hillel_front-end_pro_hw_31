@@ -63,6 +63,7 @@
   &__image {
     overflow: hidden;
     width: 230px;
+    height: 230px;
     border-radius: 6px;
     // padding: 15px 15px 23px 15px;
     // height: 290px;
@@ -93,6 +94,7 @@
   // .card__sizes
 
   &__sizes {
+    font-size: 12px;
   }
 
   // .card__price
