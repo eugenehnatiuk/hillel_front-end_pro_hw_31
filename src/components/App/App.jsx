@@ -3,6 +3,7 @@ import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 
 import { Provider } from 'react-redux';
 import { configureStore } from '@reduxjs/toolkit';
+import { thunk } from 'redux-thunk';
 import BannerMenu from '../Menu/MenuBanner.jsx';
 import closeMenuSlice from '../../Redux/closeMenuSlice.js';
 import hideBannerSlice from '../../Redux/hideBannerSlice.js';
@@ -14,6 +15,8 @@ import About from '../AboutUs/About.jsx';
 import Layout from './Layout.jsx';
 import ProductCategory from '../Menu/ProductCategory.jsx';
 import productsByCategorySlice from '../../Redux/productsByCategorySlice.js';
+import logger from 'redux-logger';
+
 
 const store = configureStore({
   reducer: {
@@ -22,6 +25,7 @@ const store = configureStore({
     productSize: sizeChangeSlice,
     productsByCategory: productsByCategorySlice,
   },
+  middleware: () => [thunk, logger]
 });
 
 const router = createBrowserRouter([
@@ -57,7 +61,7 @@ const router = createBrowserRouter([
           },
           {
             path: 'pizzas_menu',
-            element: <ProductCategory productCategory="pizzas" />,
+            element: <ProductCategory productCategory="pizza" />,
           },
           {
             path: 'soft_drinks_menu',

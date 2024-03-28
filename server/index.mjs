@@ -20,10 +20,26 @@ server.setNotFoundHandler((_, relply) => {
   return relply.sendFile('index.html');
 });
 
-/* server.get('/hello', async (_, reply) => {
-  reply.send({ message: 'Hello pizza lover' });
+server.get('/products/', async (request, reply) => {
+  const productCategory = request.query.category;
+  try {
+    const filteredProducts = products.filter(
+      (product) => product.category === productCategory
+    );
+
+    if (filteredProducts.length === 0) {
+      reply
+        .code(404)
+        .send({ error: `No products found for category: ${productCategory}` });
+    }
+   
+    reply.send(filteredProducts);
+  } catch (error) {
+    reply.code(500).send({ error: 'Internal server error' });
+  }
 });
 
+/*
 // POST
 server.post('/order', (request, reply) => {
   try {

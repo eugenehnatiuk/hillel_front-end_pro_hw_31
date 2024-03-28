@@ -1,17 +1,18 @@
 import React, { useEffect } from 'react';
-import ProductList from './Productlist.jsx';
+
 import { useDispatch, useSelector } from 'react-redux';
 import fetchProductsAsync from '../../Redux/fetchProductsSliceAsync.js';
+import ProductCard from './ProductCard.jsx';
 
 const ProductCategory = ({ productCategory }) => {
   const dispatch = useDispatch();
-  const { productsList, loading, error } = useSelector((state) => {
-    state.productsByCategory;
-  });
+  const { productsList, loading, error } = useSelector(
+    (state) => state.productsByCategory
+  );
 
   useEffect(() => {
     dispatch(fetchProductsAsync(productCategory));
-  }, productCategory);
+  }, [productCategory]);
 
   if (loading) {
     return <div className="loading"> Loading </div>;
@@ -22,14 +23,17 @@ const ProductCategory = ({ productCategory }) => {
 
   return (
     <div className="products container">
-      <ProductList
-        key={productsList.id}
-        id={productsList.id}
-        name={productsList.name}
-        sizes={productsList.size}
-        prices={productsList.price}
-        image={productsList.image}
-      />
+      {productsList &&
+        productsList.forEach((product) => {
+          <ProductCard
+            key={product.id}
+            id={product.id}
+            name={product.name}
+            sizes={product.sizes}
+            prices={product.prices}
+            image={product.image}
+          />;
+        })}
     </div>
   );
 };

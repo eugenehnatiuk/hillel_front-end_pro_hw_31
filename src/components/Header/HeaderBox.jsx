@@ -15,7 +15,7 @@ const HeaderBox = () => {
       <div className="header__logo-box">
         <img
           className="header__logo-img"
-          src="./images/Pizza_logo.png"
+          src="/images/Pizza_logo.png"
           alt="Pizza logo"
           width="100"
           height="57"

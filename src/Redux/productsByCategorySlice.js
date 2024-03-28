@@ -1,4 +1,5 @@
 import { createSlice } from '@reduxjs/toolkit';
+import fetchProductsAsync from './fetchProductsSliceAsync.js';
 
 const productsByCategorySlice = createSlice({
   name: 'productsByCategory',
@@ -9,7 +10,7 @@ const productsByCategorySlice = createSlice({
   },
   reducers: {},
   extraReducers: (builder) => {
-    builder.addCase(fetchProductsAsync.panding, (state) => {
+    builder.addCase(fetchProductsAsync.pending, (state) => {
       (state.loading = true), (state.error = null);
     });
     builder.addCase(fetchProductsAsync.fulfilled, (state, action) => {
@@ -20,6 +21,5 @@ const productsByCategorySlice = createSlice({
     });
   },
 });
-
 
 export default productsByCategorySlice.reducer;
