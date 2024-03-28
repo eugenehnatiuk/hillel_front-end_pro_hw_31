@@ -15,7 +15,8 @@ module.exports = (env) => {
       path: path.resolve(__dirname, 'build'),
       filename: 'bundle.[contenthash].js',
       clean: true,
-      // assetModuleFilename: path.join('static', '[name].[ext]'),
+      publicPath: '/'
+     
     },
     devServer: {
       port: env.port ?? 7000, // env обьект окружения со свойством port если не указан '-- --env port=xxxx', то 7000

@@ -12,13 +12,15 @@ import Menu from '../Menu/Menu.jsx';
 import Contacts from '../Contacts/Contacts.jsx';
 import About from '../AboutUs/About.jsx';
 import Layout from './Layout.jsx';
-import Productlist from '../Menu/Productlist.jsx';
+import ProductCategory from '../Menu/ProductCategory.jsx';
+import productsByCategorySlice from '../../Redux/productsByCategorySlice.js';
 
 const store = configureStore({
   reducer: {
     closeMenu: closeMenuSlice,
     hideBanner: hideBannerSlice,
     productSize: sizeChangeSlice,
+    productsByCategory: productsByCategorySlice,
   },
 });
 
@@ -55,11 +57,11 @@ const router = createBrowserRouter([
           },
           {
             path: 'pizzas_menu',
-            element: <Productlist />,
+            element: <ProductCategory productCategory="pizzas" />,
           },
           {
             path: 'soft_drinks_menu',
-            element: 'This is soft drinks',
+            element: <ProductCategory productCategory="drinks" />,
           },
         ],
       },

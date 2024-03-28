@@ -7,7 +7,7 @@ const BannerMenu = () => {
     <div className="menu__category-box">
       <ul className="menu__category-list">
         <li className="menu__category-item">
-          <Link to={'pizzas_menu'} className="menu__category-link">
+          <Link to={'/menu/pizzas_menu'} className="menu__category-link">
             <img
               src="/images/pizzaMenu.jpg"
               alt="Pizzas menu"

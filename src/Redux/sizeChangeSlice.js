@@ -4,7 +4,6 @@ const initialState = {
   productSize: 'size-small', 
 };
 
-
 const sizeChangeSlice = createSlice({
   name: 'productSize',
   initialState,
@@ -18,3 +17,6 @@ const sizeChangeSlice = createSlice({
 
 export const { setProductSize } = sizeChangeSlice.actions;
 export default sizeChangeSlice.reducer;
+
+
+ 
