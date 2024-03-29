@@ -16,7 +16,7 @@ import Layout from './Layout.jsx';
 import ProductCategory from '../Menu/ProductCategory.jsx';
 import productsByCategorySlice from '../../Redux/productsByCategorySlice.js';
 import logger from 'redux-logger';
-
+import basketModalSlice from '../../Redux/basketModalSlice.js';
 
 const store = configureStore({
   reducer: {
@@ -24,8 +24,9 @@ const store = configureStore({
     hideBanner: hideBannerSlice,
     productSize: sizeChangeSlice,
     productsByCategory: productsByCategorySlice,
+    basketmodal: basketModalSlice,
   },
-  middleware: () => [thunk, logger]
+  middleware: () => [thunk, logger],
 });
 
 const router = createBrowserRouter([

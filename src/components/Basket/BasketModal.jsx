@@ -1,16 +1,23 @@
 import React from 'react';
 import './basketmodal.scss';
 import { Link } from 'react-router-dom';
+import { useDispatch, useSelector } from 'react-redux';
+import { closeBasket } from '../../Redux/basketModalSlice.js';
 
 const BasketModal = () => {
-  const isOrder = false;
+  const dispatch = useDispatch();
+  const basketOpen = useSelector((state) => state.basketmodal.isOpen);
+  const isOrder = true;
 
   return (
     <div className="basket-modal__container">
       {isOrder ? (
         <>
           <div className="basket-modal__content">
-            <div className="basket-modal__close"></div>
+            <div
+              className={`basket-modal__close ${!basketOpen && 'closed'}`}
+              onClick={() => dispatch(closeBasket())}
+            ></div>
             <h3 className="basket-modal__title">Your order</h3>
             <div className="basket-modal__order">
               <div className="basket-modal__order-img">
