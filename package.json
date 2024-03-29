@@ -1,5 +1,5 @@
 {
-  "name": "big_fullstack_project",
+  "name": "pizza-house",
   "version": "1.0.0",
   "description": "Websocket server",
   "main": "./src/index.js",
@@ -15,7 +15,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/eugenehnatiuk/hillel_big_fullstack_project"
+    "url": "git+https://github.com/eugenehnatiuk/hillel_front-end_pro_hw_31"
   },
   "keywords": [
     "Websocket server"
@@ -23,9 +23,9 @@
   "author": "joaquin_solo",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/eugenehnatiuk/hillel_big_fullstack_project/issues"
+    "url": "https://github.com/eugenehnatiuk/hillel_front-end_pro_hw_31"
   },
-  "homepage": "https://github.com/eugenehnatiuk/hillel_big_fullstack_project#readme",
+  "homepage": "https://github.com/eugenehnatiuk/hillel_front-end_pro_hw_31",
   "devDependencies": {
     "@babel/cli": "^7.23.9",
     "@babel/core": "^7.23.9",

@@ -21,11 +21,11 @@ const ProductCard = ({ id, name, sizes, image }) => {
           <h3 className="card__title">{name}</h3>
           <div className="card__sizes">
             {sizes.map((size) => (
-              <label key={size.size + id}>
+              <label htmlFor={`${size.size}-${id}`} key={size.size + id}>
                 <input
                   type="radio"
-                  name={`product-size-${id}-${size.value}`}
-                  id={`size-${size.value}-${id}`}
+                  id={`${size.size}-${id}`}
+                  name={`product-size-${id}`}
                   checked={selectSize === `size-${size.value}-${id}`}
                   value={`size-${size.value}-${id}`}
                   onChange={handleSizeChange}
