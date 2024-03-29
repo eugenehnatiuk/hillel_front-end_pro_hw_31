@@ -37,14 +37,15 @@
 
 .products {
   display: flex;
-  flex-flow: column;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
+  flex-wrap: wrap;
   gap: 15px;
 
   @include viewport-md {
     flex-direction: row;
-    justify-content: space-between;
+    justify-content: center;
   }
 }
 
