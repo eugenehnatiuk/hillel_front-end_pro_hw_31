@@ -1,6 +1,6 @@
-import { createSlice } from '@reduxjs/toolkit';
+/* import { createSlice } from '@reduxjs/toolkit';
 
-const initialState = new Map();
+const initialState = {};
 
 const sizeChangeSlice = createSlice({
   name: 'productSize',
@@ -9,7 +9,7 @@ const sizeChangeSlice = createSlice({
     setProductSize: (state, action) => {
       const { cardId, size } = action.payload;
 
-      const currentSizes = state.get(cardId) || {};
+      const currentSizes = state[cardId] || {};
 
       const updatedSizes = { ...currentSizes };
       updatedSizes[size] = true;
@@ -19,10 +19,11 @@ const sizeChangeSlice = createSlice({
         }
       });
 
-      state.set(cardId, updatedSizes);
+      state[cardId] = updatedSizes;
     },
   },
 });
 
 export const { setProductSize } = sizeChangeSlice.actions;
 export default sizeChangeSlice.reducer;
+ */

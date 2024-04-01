@@ -19,7 +19,7 @@ import logger from 'redux-logger';
 import basketModalSlice from '../../Redux/basketModalSlice.js';
 import { enableMapSet } from 'immer';
 
-enableMapSet();
+// enableMapSet();
 
 const store = configureStore({
   reducer: {
