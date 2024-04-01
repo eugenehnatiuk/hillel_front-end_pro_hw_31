@@ -4,16 +4,15 @@ import { setProductSize } from '../../Redux/sizeChangeSlice.js';
 
 const ProductCard = ({ id, name, sizes, image, prices }) => {
   const dispatch = useDispatch();
-  const selectSize = useSelector((state) => state.productSize.productSizes);
+  const selectSize = useSelector((state) => state.productSize);
 
   const handleSizeChange = ({
     target: {
-      value,
       dataset: { size },
     },
   }) => {
     const cardId = id;
-    dispatch(setProductSize({ cardId, size, sizename: value }));
+    dispatch(setProductSize({ cardId, size }));
   };
 
   return (
@@ -33,8 +32,9 @@ const ProductCard = ({ id, name, sizes, image, prices }) => {
                   type="radio"
                   id={`${size.size}-${id}`}
                   name={`product-size-${id}`}
-                  checked={selectSize[`${size.size}${id}`] === `${size.value}`}
-                  value={`${size.value}`}
+                  checked={
+                    selectSize.get(id) ? selectSize.get(id)[size] : false
+                  }
                   onChange={handleSizeChange}
                 />
                 {size.value}

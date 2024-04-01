@@ -17,6 +17,9 @@ import ProductCategory from '../Menu/ProductCategory.jsx';
 import productsByCategorySlice from '../../Redux/productsByCategorySlice.js';
 import logger from 'redux-logger';
 import basketModalSlice from '../../Redux/basketModalSlice.js';
+import { enableMapSet } from 'immer';
+
+enableMapSet();
 
 const store = configureStore({
   reducer: {
