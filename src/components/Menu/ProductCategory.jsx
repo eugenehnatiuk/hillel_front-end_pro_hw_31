@@ -30,7 +30,7 @@ const ProductCategory = ({ productCategory }) => {
             id={product.id}
             name={product.name}
             sizes={product.sizes}
-            // prices={product.prices}
+            prices={product.prices}
             image={product.image}
           />
         )}

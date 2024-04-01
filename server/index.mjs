@@ -4,7 +4,6 @@ import { join, dirname } from 'path';
 import { fileURLToPath } from 'url';
 import productList from './dbProductlist.mjs';
 
-const products = productList;
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
@@ -23,16 +22,10 @@ server.setNotFoundHandler((_, relply) => {
 server.get('/products/', async (request, reply) => {
   const productCategory = request.query.category;
   try {
-    const filteredProducts = products.filter(
+    const filteredProducts = productList.filter(
       (product) => product.category === productCategory
     );
-
-    if (filteredProducts.length === 0) {
-      reply
-        .code(404)
-        .send({ error: `No products found for category: ${productCategory}` });
-    }
-    reply.header('Content-Type', 'application/json');
+   
     reply.send(filteredProducts);
   } catch (error) {
     reply.code(500).send({ error: 'Internal server error' });
