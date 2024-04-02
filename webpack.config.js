@@ -15,7 +15,7 @@ module.exports = (env) => {
       path: path.resolve(__dirname, 'build'),
       filename: 'bundle.[contenthash].js',
       clean: true,
-      publicPath: '/', // for deploy to render
+      publicPath: '/', // for deploy to elsewhere exsept github pages
     },
     devServer: {
       port: env.port ?? 7000, // env обьект окружения со свойством port если не указан '-- --env port=xxxx', то 7000

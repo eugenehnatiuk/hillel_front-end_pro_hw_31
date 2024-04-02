@@ -7,7 +7,6 @@ import { useSelector } from 'react-redux';
 
 const Leyout = () => {
   const basketOpen = useSelector((state) => state.basketmodal.isOpen);
-
   return (
     <>
       <Header />

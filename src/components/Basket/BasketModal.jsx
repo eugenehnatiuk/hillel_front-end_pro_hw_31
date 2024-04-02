@@ -1,64 +1,133 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import './basketmodal.scss';
 import { Link } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import { closeBasket } from '../../Redux/basketModalSlice.js';
+import {
+  clearOrder,
+  decreaseQuantity,
+  setOrderPlaced,
+  increaseQuantity,
+} from '../../Redux/handleOrderSlice.js';
+import { setTotalPrice } from '../../Redux/totalPriceChangeSlice.js';
 
 const BasketModal = () => {
   const dispatch = useDispatch();
+
   const basketOpen = useSelector((state) => state.basketmodal.isOpen);
-  const isOrder = true;
+  const order = useSelector((state) => state.handleOrder.order);
+  const totalPrice = useSelector((state) => state.totalPrice.value);
+  const isOrderPlaced = useSelector((state) => state.handleOrder.isOrderPlaced);
+
+  useEffect(() => {
+    const newTotalPrice = order.reduce(
+      (acc, { totalByIndexPrice }) => acc + totalByIndexPrice,
+      0
+    );
+    if (newTotalPrice !== totalPrice) {
+      dispatch(setTotalPrice(newTotalPrice));
+    }
+  }, [order]);
+
+   useEffect(() => {
+     dispatch(setOrderPlaced(false));
+   }, []);
+  
+  const handleOrderButtonClick = () => {
+    dispatch(setOrderPlaced(true));
+    dispatch(clearOrder())
+  };
 
   return (
     <div className="basket-modal__container">
-      {isOrder ? (
-        <>
-          <div className="basket-modal__content">
-            <div
-              className={`basket-modal__close ${!basketOpen && 'closed'}`}
-              onClick={() => dispatch(closeBasket())}
-            ></div>
-            <h3 className="basket-modal__title">Your order</h3>
-            <div className="basket-modal__order">
-              <div className="basket-modal__order-img">
-                <img
-                  src="https://lviv.veteranopizza.com/image/cache/catalog/pizza/peperoni-800x800.jpg"
-                  alt=""
-                />
-              </div>
-              <p className="basket-modal__order-name">Papperoni</p>
-              <p className="basket-modal__order-size">
-                Size: <span>S</span>
-              </p>
-              <div className="basket-modal__order-counter">
-                <button>-</button>
-                <span> 1 </span>
-                <button>+</button>
-              </div>
-              <div className="basket-modal__order-price">
-                Price: <span>400 </span>UAH
-              </div>
-            </div>
+      <div
+        className={
+          'basket-modal__content' +
+          (isOrderPlaced ? ' basket-modal__content--order-placed' : '') +
+          (totalPrice > 0 ? '' : ' basket-modal__content--empty')
+        }
+      >
+        <div
+          className={`basket-modal__close ${!basketOpen && 'closed'}`}
+          onClick={() => dispatch(closeBasket())}
+        ></div>
+        {isOrderPlaced ? (
+          <div className="basket-modal__order-placed">
+            <p>Thank you for your order!</p>
+            <Link to={'/menu'} onClick={() => dispatch(closeBasket())}>
+              Back to menu
+            </Link>
+          </div>
+        ) : totalPrice > 0 ? (
+          <>
+            {order.map(
+              ({
+                image,
+                size,
+                quantity,
+                price,
+                name,
+                id,
+                totalByIndexPrice,
+              }) => (
+                <div key={`${id}-${size}`}>
+                  <h3 className="basket-modal__title">Your order</h3>
+                  <div className="basket-modal__order">
+                    <div className="basket-modal__order-img">
+                      <img src={image} alt={`image-${name}`} />
+                    </div>
+                    <p className="basket-modal__order-name">{name}</p>
+                    <p className="basket-modal__order-size">
+                      Size: <span>{size}</span>
+                    </p>
+                    <div className="basket-modal__order-counter">
+                      <button
+                        onClick={() =>
+                          dispatch(decreaseQuantity({ id, size, price }))
+                        }
+                      >
+                        -
+                      </button>
+                      <span> {quantity} </span>
+                      <button
+                        onClick={() =>
+                          dispatch(increaseQuantity({ id, size, price }))
+                        }
+                      >
+                        +
+                      </button>
+                    </div>
+                    <div className="basket-modal__order-price">
+                      Price: <span>{totalByIndexPrice} </span>UAH
+                    </div>
+                  </div>
+                </div>
+              )
+            )}
             <div className="basket-modal__total">
               <p className="basket-modal__total-title">Total:</p>
               <div className="basket-modal__total-count">
-                <span>400</span> UAH
+                <span>{totalPrice}</span> UAH
               </div>
             </div>
-            <button className="basket-modal__order-btn">Order</button>
-          </div>
-        </>
-      ) : (
-        <>
-          <div className="basket-modal__content basket-modal__content--empty">
-            <div className="basket-modal__close"></div>
+            <button
+              className="basket-modal__order-btn"
+              onClick={handleOrderButtonClick}
+            >
+              Order
+            </button>
+          </>
+        ) : (
+          <>
             <p>Oops, sorry</p>
             <p>Your order is empty</p>
             <p>Please make your order</p>
-            <Link to={'/menu'}> Menu </Link>
-          </div>
-        </>
-      )}
+            <Link to={'/menu'} onClick={() => dispatch(closeBasket())}>
+              Menu{' '}
+            </Link>
+          </>
+        )}
+      </div>
     </div>
   );
 };

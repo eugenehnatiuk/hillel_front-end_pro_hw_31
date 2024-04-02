@@ -1,16 +1,33 @@
 import React, { useState } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
-import { setProductSize } from '../../Redux/sizeChangeSlice.js';
+import { useDispatch } from 'react-redux';
+import { addOrder } from '../../Redux/handleOrderSlice.js';
+// import { useDispatch, useSelector } from 'react-redux';
+// import { setProductSize } from '../../Redux/sizeChangeSlice.js';
 
 const ProductCard = ({ id, name, sizes, image, prices }) => {
-/*   const dispatch = useDispatch();
+  const dispatch = useDispatch();
+
+  /*   
   const selectSize = useSelector((state) => state.productSize);
 
   const handleSizeChange = (size) => {
     dispatch(setProductSize({ cardId: id, size }));
     setSelectedSize(size);
   }; */
-  const [size, setSize ] = useState('S')
+  
+  const [selectedSize, setSize] = useState('S');
+
+  const addToBasket = () => {
+    const orderItem = {
+      id,
+      name,
+      size: selectedSize,
+      price: selectedSize === 'S' ? prices[0] : prices[1],
+      image,
+    };
+
+    dispatch(addOrder(orderItem));
+  };
   return (
     <>
       <div className="products__card card" key={id}>
@@ -30,7 +47,7 @@ const ProductCard = ({ id, name, sizes, image, prices }) => {
                   type="radio"
                   id={`${sizeItem.size}-${id}`}
                   name={`product-size-${id}`}
-                  checked={size === sizeItem.size}
+                  checked={selectedSize === sizeItem.size}
                   // checked={selectSize[id] ? selectSize[id][sizeItem] : false}
                   onChange={() => setSize(sizeItem.size)}
                 />
@@ -40,10 +57,12 @@ const ProductCard = ({ id, name, sizes, image, prices }) => {
           </div>
           <div className="card__price">
             <span>Price:</span>{' '}
-            <span>{size === 'S' ? prices[0] : prices[1]} UAH</span>
+            <span>{selectedSize === 'S' ? prices[0] : prices[1]} UAH</span>
           </div>
           <div></div>
-          <button className="card__addBtn">Add</button>
+          <button className="card__addBtn" onClick={addToBasket}>
+            Add
+          </button>
         </div>
       </div>
     </>

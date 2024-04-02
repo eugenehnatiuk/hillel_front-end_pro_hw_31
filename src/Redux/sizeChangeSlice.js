@@ -25,5 +25,4 @@ const sizeChangeSlice = createSlice({
 });
 
 export const { setProductSize } = sizeChangeSlice.actions;
-export default sizeChangeSlice.reducer;
- */
+export default sizeChangeSlice.reducer; */

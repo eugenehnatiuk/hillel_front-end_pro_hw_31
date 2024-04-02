@@ -4,6 +4,7 @@ import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import { Provider } from 'react-redux';
 import { configureStore } from '@reduxjs/toolkit';
 import { thunk } from 'redux-thunk';
+import logger from 'redux-logger';
 import BannerMenu from '../Menu/MenuBanner.jsx';
 import closeMenuSlice from '../../Redux/closeMenuSlice.js';
 import hideBannerSlice from '../../Redux/hideBannerSlice.js';
@@ -15,9 +16,9 @@ import About from '../AboutUs/About.jsx';
 import Layout from './Layout.jsx';
 import ProductCategory from '../Menu/ProductCategory.jsx';
 import productsByCategorySlice from '../../Redux/productsByCategorySlice.js';
-import logger from 'redux-logger';
 import basketModalSlice from '../../Redux/basketModalSlice.js';
-import { enableMapSet } from 'immer';
+import handleOrderSlice from '../../Redux/handleOrderSlice.js';
+import totalPriceChangeSlice from '../../Redux/totalPriceChangeSlice.js';
 
 // enableMapSet();
 
@@ -25,9 +26,11 @@ const store = configureStore({
   reducer: {
     closeMenu: closeMenuSlice,
     hideBanner: hideBannerSlice,
-    productSize: sizeChangeSlice,
+    // productSize: sizeChangeSlice,
     productsByCategory: productsByCategorySlice,
     basketmodal: basketModalSlice,
+    handleOrder: handleOrderSlice,
+    totalPrice: totalPriceChangeSlice,
   },
   middleware: () => [thunk, logger],
 });
