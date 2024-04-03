@@ -43,7 +43,7 @@ const Banner = () => {
   return (
     <div className="banner container">
       <swiper-container
-        autoplay="true"
+        autoplay-delay="3000"
         className="banner__swiper"
         loop="true"
         pagination="true"
