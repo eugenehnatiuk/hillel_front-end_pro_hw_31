@@ -1,0 +1,25 @@
+.custom-shape-divider-bottom {
+  position: absolute;
+  bottom: -66px;
+  left: 0;
+  width: 100%;
+  overflow: hidden;
+  line-height: 0;
+  transform: rotate(360deg);
+
+  &--footer {
+    transform: rotateX(180deg);
+    bottom: 173px;
+  }
+}
+
+.custom-shape-divider-bottom svg {
+  position: relative;
+  display: block;
+  width: calc(100% + 1.3px);
+  height: 67px;
+}
+
+.custom-shape-divider-bottom .shape-fill {
+  fill: url(#gradient);
+}

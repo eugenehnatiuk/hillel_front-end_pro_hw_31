@@ -20,7 +20,7 @@ const HeaderBox = () => {
           width="100"
           height="57"
         ></img>
-        <p className="header__logo-name">Pizza House</p>
+        <p className="header__logo-name">Pizza Spot</p>
       </div>
       <div className="header__box-burger" onClick={() => dispatch(open())}>
         <span></span>

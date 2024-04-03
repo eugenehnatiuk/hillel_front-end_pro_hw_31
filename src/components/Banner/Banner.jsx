@@ -59,7 +59,7 @@ const Banner = () => {
             <div className="banner__inner">
               <p className="banner__title">Your Pizza&Cola weekends</p>
               <p className="banner__legend">
-                Take one and Cola and get second one for free
+                Take one Cola and get second one for free.
               </p>
             </div>
           </div>
@@ -77,7 +77,7 @@ const Banner = () => {
             <div className="banner__inner">
               <p className="banner__title">Your Pizza&Cola weekends</p>
               <p className="banner__legend">
-                Take one and Cola and get second one for free
+                Take one Cola and get second one for free.
               </p>
             </div>
           </div>

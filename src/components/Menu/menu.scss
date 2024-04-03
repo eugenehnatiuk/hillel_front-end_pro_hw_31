@@ -4,34 +4,80 @@
   //.menu__section
   &__section {
     text-align: center;
-    margin-bottom: 30px;
+    // margin-bottom: 30px;
+  }
+
+  &__description-box {
+    max-width: 350px;
+    margin: 0 auto 40px;
+    text-align: justify;
+
+    @include viewport-md {
+      max-width: 700px;
+    }
+  }
+  &__description-text {
+    margin: 0 0 10px;
+    font-size: 18px;
+    line-height: 24px;
+    // text-indent: 30px;
+
+    @include viewport-md {
+      font-size: 20px;
+    }
   }
 
   &__category-box {
+    margin: 0 0 100px;
   }
 
   // .menu__title
 
   &__title {
+    font-size: 25px;
+    font-weight: 900;
     padding: 20px;
+    color: $main-color;
+    text-decoration: none;
+    display: block;
+    margin: 0 0 30px;
   }
 
   // .menu__list
 
   &__category-list {
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
-    gap: 10px;
+    gap: 50px;
+
+    @include viewport-md {
+      flex-direction: row;
+    }
   }
 
   // .menu__list-item
 
   &__category-item {
+    & img {
+      object-fit: cover;
+      width: 100%;
+      height: 100%;
+    }
+  }
+
+  &__category-title {
+    font-weight: 900;
+    margin: 0 0 20px 0;
   }
 
   &__category-link {
+    border-radius: 6px;
+    overflow: hidden;
     display: block;
+    width: 300px;
+    height: 300px;
   }
 }
 
@@ -51,6 +97,7 @@
 
 .card {
   width: 260px;
+  height: 413px;
   padding: 15px;
   background-color: rgba(245, 92, 92, 0.5);
   border-radius: 6px;
@@ -59,6 +106,13 @@
   justify-content: center;
   align-items: center;
   gap: 10px;
+  position: relative;
+  transition: transform 0.5s;
+  transform-style: preserve-3d;
+
+  &.is-flipped {
+    transform: rotateY(180deg);
+  }
   // .card__image
 
   &__image {
@@ -66,6 +120,8 @@
     width: 230px;
     height: 230px;
     border-radius: 6px;
+    cursor: pointer;
+    margin: 0 0 10px;
     // padding: 15px 15px 23px 15px;
     // height: 290px;
 
@@ -84,6 +140,19 @@
     flex-direction: column;
     gap: 15px;
     align-items: center;
+
+    &.is-flipped {
+      align-items: flex-start;
+    }
+
+    & p {
+      font-weight: 900;
+      text-align: left;
+
+      & span {
+        font-weight: normal;
+      }
+    }
   }
 
   // .card__title
@@ -114,5 +183,16 @@
     color: white;
     margin: 0 0 10px;
     cursor: pointer;
+  }
+
+  .card__face {
+    // position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+  }
+
+  .card__face--back {
+    transform: rotateY(180deg);
   }
 }

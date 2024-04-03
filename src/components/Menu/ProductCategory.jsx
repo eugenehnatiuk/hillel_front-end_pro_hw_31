@@ -24,7 +24,7 @@ const ProductCategory = ({ productCategory }) => {
   return (
     <div className="products container">
       {productsList &&
-        productsList.map((product) => 
+        productsList.map((product) => (
           <ProductCard
             key={product.id}
             id={product.id}
@@ -32,8 +32,9 @@ const ProductCategory = ({ productCategory }) => {
             sizes={product.sizes}
             prices={product.prices}
             image={product.image}
+            composition={product.composition}
           />
-        )}
+        ))}
     </div>
   );
 };

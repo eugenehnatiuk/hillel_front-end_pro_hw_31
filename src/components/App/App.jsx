@@ -8,7 +8,7 @@ import logger from 'redux-logger';
 import BannerMenu from '../Menu/MenuBanner.jsx';
 import closeMenuSlice from '../../Redux/closeMenuSlice.js';
 import hideBannerSlice from '../../Redux/hideBannerSlice.js';
-import sizeChangeSlice from '../../Redux/sizeChangeSlice.js';
+// import sizeChangeSlice from '../../Redux/sizeChangeSlice.js';
 
 import Menu from '../Menu/Menu.jsx';
 import Contacts from '../Contacts/Contacts.jsx';
@@ -19,6 +19,7 @@ import productsByCategorySlice from '../../Redux/productsByCategorySlice.js';
 import basketModalSlice from '../../Redux/basketModalSlice.js';
 import handleOrderSlice from '../../Redux/handleOrderSlice.js';
 import totalPriceChangeSlice from '../../Redux/totalPriceChangeSlice.js';
+import Main from '../Main/Main.jsx';
 
 // enableMapSet();
 
@@ -40,24 +41,10 @@ const router = createBrowserRouter([
     path: '/',
     element: <Layout />,
     children: [
-      // {
-      // path: '/',
-      // element: <Menu />,
-      // children: [
-      // {
-      //   index: true,
-      //   element: <BannerMenu />,
-      // },
-      // {
-      //   path: 'pizzas_menu',
-      //   element: <Productlist />,
-      // },
-      // {
-      //   path: 'soft_drinks_menu',
-      //   element: 'This is soft drinks',
-      // },
-      // ],
-      // },
+      {
+        path: '/',
+        element: <Main/>,
+      },
       {
         path: 'menu',
         element: <Menu />,

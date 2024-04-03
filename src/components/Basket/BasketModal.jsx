@@ -29,13 +29,13 @@ const BasketModal = () => {
     }
   }, [order]);
 
-   useEffect(() => {
-     dispatch(setOrderPlaced(false));
-   }, []);
-  
+  useEffect(() => {
+    dispatch(setOrderPlaced(false));
+  }, []);
+
   const handleOrderButtonClick = () => {
     dispatch(setOrderPlaced(true));
-    dispatch(clearOrder())
+    dispatch(clearOrder());
   };
 
   return (
@@ -60,6 +60,7 @@ const BasketModal = () => {
           </div>
         ) : totalPrice > 0 ? (
           <>
+            <h3 className="basket-modal__title">Your order</h3>
             {order.map(
               ({
                 image,
@@ -71,7 +72,6 @@ const BasketModal = () => {
                 totalByIndexPrice,
               }) => (
                 <div key={`${id}-${size}`}>
-                  <h3 className="basket-modal__title">Your order</h3>
                   <div className="basket-modal__order">
                     <div className="basket-modal__order-img">
                       <img src={image} alt={`image-${name}`} />
