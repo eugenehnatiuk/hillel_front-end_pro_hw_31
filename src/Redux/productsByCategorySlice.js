@@ -11,13 +11,16 @@ const productsByCategorySlice = createSlice({
   reducers: {},
   extraReducers: (builder) => {
     builder.addCase(fetchProductsAsync.pending, (state) => {
-      (state.loading = true), (state.error = null);
+      state.loading = true;
+      state.error = null;
     });
     builder.addCase(fetchProductsAsync.fulfilled, (state, action) => {
-      (state.loading = false), (state.productsList = action.payload);
+      state.loading = false;
+      state.productsList = action.payload;
     });
     builder.addCase(fetchProductsAsync.rejected, (state, action) => {
-      (state.loading = false), (state.error = action.payload);
+      state.loading = false;
+      state.error = action.payload;
     });
   },
 });

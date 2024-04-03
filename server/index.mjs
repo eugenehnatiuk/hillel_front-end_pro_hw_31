@@ -3,7 +3,7 @@ import fastifyStatic from '@fastify/static';
 import { join, dirname } from 'path';
 import { fileURLToPath } from 'url';
 import productList from './dbProductlist.mjs';
-
+import promoList from './dbPromoList.mjs';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
@@ -19,17 +19,33 @@ server.setNotFoundHandler((_, relply) => {
   return relply.sendFile('index.html');
 });
 
+// server.get('/products/:productCategory', async (request, reply) => {
+//   const productCategory = request.params.productCategory;
+//   try {
+//     const filteredProducts = productList.filter(
+//       (product) => product.category === productCategory
+//     );
+
+//     reply.send(filteredProducts);
+//   } catch (error) {
+//     reply.code(500).send({ error: 'Internal server error' });
+//   }
+// });
 server.get('/products/', async (request, reply) => {
   const productCategory = request.query.category;
   try {
     const filteredProducts = productList.filter(
       (product) => product.category === productCategory
     );
-   
+
     reply.send(filteredProducts);
   } catch (error) {
     reply.code(500).send({ error: 'Internal server error' });
   }
+});
+
+server.get('/promo', async (_, reply) => {
+  reply.send(promoList);
 });
 
 /*

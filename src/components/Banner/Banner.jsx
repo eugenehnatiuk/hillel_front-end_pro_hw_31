@@ -3,9 +3,18 @@ import './banner.scss';
 
 import { register } from 'swiper/element/bundle';
 
+import { useDispatch, useSelector } from 'react-redux';
+import fetchPromoAsync from '../../Redux/fetchPromoSliceAsync.js';
+import { addOrder } from '../../Redux/handleOrderSlice.js';
+
 register();
 
 const Banner = () => {
+  const dispatch = useDispatch();
+  const { promoList, loading, error } = useSelector((state) => state.promo);
+
+  // SWIPER STYLES CHANGE FORSING
+  // _______________________________________________________________
   useEffect(() => {
     const swiperContainer = document.querySelector('swiper-container');
     const style = document.createElement('style');
@@ -18,70 +27,67 @@ const Banner = () => {
       swiperContainer.shadowRoot.appendChild(style);
     }
   }, []);
+  // _______________________________________________________________
+
+  useEffect(() => {
+    dispatch(fetchPromoAsync());
+  }, []);
+
+  if (loading) {
+    return <div className="loading"> Loading </div>;
+  }
+  if (error) {
+    return <div className="errorFetching">Error: {error}</div>;
+  }
 
   return (
     <div className="banner container">
       <swiper-container
+        autoplay="true"
         className="banner__swiper"
         loop="true"
         pagination="true"
         // pagination-dynamic-bullets="true"
         navigation="true"
       >
-        <swiper-slide>
-          <div className="banner__slide">
-            <div className="banner__image">
-              <img
-                src="../../images/pizza_cola.webp"
-                alt="Pizza & Cola Banner"
-                width={800}
-                height={300}
-              />
-            </div>
-            <div className="banner__inner">
-              <p className="banner__title">Your Pizza&Cola weekends</p>
-              <p className="banner__legend">
-                Take one Cola and get second one for free.
-              </p>
-            </div>
-          </div>
-        </swiper-slide>
-        <swiper-slide>
-          <div className="banner__slide">
-            <div className="banner__image">
-              <img
-                src="../../images/pizza_cola.webp"
-                alt="Pizza & Cola Banner"
-                width={800}
-                height={400}
-              />
-            </div>
-            <div className="banner__inner">
-              <p className="banner__title">Your Pizza&Cola weekends</p>
-              <p className="banner__legend">
-                Take one Cola and get second one for free.
-              </p>
-            </div>
-          </div>
-        </swiper-slide>
-        <swiper-slide>
-          <div className="banner__slide">
-            <div className="banner__image">
-              <img
-                src="../../images/pizza_cola.webp"
-                alt="Pizza & Cola Banner"
-                width={800}
-                height={400}
-              />
-            </div>
-            <div className="banner__inner">
-              <p className="banner__title">Your Pizza&Cola weekends</p>
-              <p className="banner__legend">
-                Take one Cola and get second one for free.
-              </p>
-            </div>
-          </div>
-        </swiper-slide>
+        {promoList &&
+          promoList.map(
+            ({ name, legend, size, price, image, composition, id }) => (
+              <swiper-slide key={id}>
+                <div className="banner__slide">
+                  <div className="banner__image">
+                    <img
+                      src={image}
+                      alt={`${name} Banner`}
+                      width={800}
+                      height={300}
+                    />
+                  </div>
+                  <div className="banner__inner">
+                    <p className="banner__title">{name}</p>
+                    <p className="banner__legend">{legend}</p>
+                    <button
+                      className="banner__btn"
+                      onClick={() =>
+                        dispatch(
+                          addOrder({
+                            name,
+                            size,
+                            price,
+                            id,
+                            composition,
+                            image,
+                          })
+                        )
+                      }
+                    >
+                      Order
+                    </button>
+                  </div>
+                </div>
+              </swiper-slide>
+            )
+          )}
       </swiper-container>
     </div>
   );

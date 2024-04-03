@@ -113,6 +113,7 @@
 
       @include viewport-md {
         width: 55%;
+        height: 175px;
         // border-right: 4px solid $main-color;
         border-bottom: 4px solid $main-color;
         border-radius: 0 0 6px 0;
@@ -124,7 +125,7 @@
           top: -49px;
           right: 0;
           width: 4px;
-          height: 134%;
+          height: 129%;
           background: $main-color;
           border-radius: 6px;
         }

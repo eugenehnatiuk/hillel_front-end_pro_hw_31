@@ -19,6 +19,7 @@
   &__title {
     padding: 10px 0 0;
     font-weight: 900;
+    margin: 0 0 25px;
   }
 
   // .basket-modal__content
@@ -87,9 +88,21 @@
     }
   }
 
+  &__item {
+    flex: 1 1 20%;
+  }
+
   &__order-name {
     font-weight: 900;
-    flex: 1 1 20%;
+    padding: 5px;
+  }
+  &__order-description-box {
+    padding: 5px;
+  }
+
+  &__order-description {
+    font-size: 12px;
+    padding: 0 0 5px;
   }
 
   // .basket-modal__order-size
@@ -122,6 +135,7 @@
 
   &__order-price {
     font-weight: 900;
+    flex: 1 1 20%;
   }
 
   // .basket-modal__total

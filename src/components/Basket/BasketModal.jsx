@@ -70,13 +70,26 @@ const BasketModal = () => {
                 name,
                 id,
                 totalByIndexPrice,
+                composition,
               }) => (
                 <div key={`${id}-${size}`}>
                   <div className="basket-modal__order">
                     <div className="basket-modal__order-img">
                       <img src={image} alt={`image-${name}`} />
                     </div>
-                    <p className="basket-modal__order-name">{name}</p>
+                    <div className="basket-modal__item">
+                      <p className="basket-modal__order-name">{name}</p>
+                      <div className="basket-modal__order-description-box">
+                        {composition?.map((item, index) => (
+                          <p
+                            className="basket-modal__order-description"
+                            key={index + id}
+                          >
+                            {item}
+                          </p>
+                        ))}
+                      </div>
+                    </div>
                     <p className="basket-modal__order-size">
                       Size: <span>{size}</span>
                     </p>

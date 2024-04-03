@@ -5,6 +5,7 @@ import { addOrder } from '../../Redux/handleOrderSlice.js';
 // import { setProductSize } from '../../Redux/sizeChangeSlice.js';
 
 const ProductCard = ({ id, name, sizes, image, prices, composition }) => {
+  
   const dispatch = useDispatch();
 
   /*   

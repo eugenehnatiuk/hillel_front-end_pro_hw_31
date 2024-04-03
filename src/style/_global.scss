@@ -7,6 +7,14 @@ body {
   font-weight: 400;
   position: relative;
   // overflow: hidden;
+
+  &.basket-open {
+    overflow: hidden;
+  }
+
+  &.basket-closed {
+    overflow: visible;
+  }
 }
 
 .wrapper {

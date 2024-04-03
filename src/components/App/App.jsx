@@ -20,6 +20,7 @@ import basketModalSlice from '../../Redux/basketModalSlice.js';
 import handleOrderSlice from '../../Redux/handleOrderSlice.js';
 import totalPriceChangeSlice from '../../Redux/totalPriceChangeSlice.js';
 import Main from '../Main/Main.jsx';
+import promoSlice from '../../Redux/promoSlice.js';
 
 // enableMapSet();
 
@@ -32,6 +33,7 @@ const store = configureStore({
     basketmodal: basketModalSlice,
     handleOrder: handleOrderSlice,
     totalPrice: totalPriceChangeSlice,
+    promo: promoSlice,
   },
   middleware: () => [thunk, logger],
 });
@@ -43,7 +45,7 @@ const router = createBrowserRouter([
     children: [
       {
         path: '/',
-        element: <Main/>,
+        element: <Main />,
       },
       {
         path: 'menu',

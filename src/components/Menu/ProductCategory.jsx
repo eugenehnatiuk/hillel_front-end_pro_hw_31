@@ -33,6 +33,7 @@ const ProductCategory = ({ productCategory }) => {
             prices={product.prices}
             image={product.image}
             composition={product.composition}
+            description={product.description}
           />
         ))}
     </div>

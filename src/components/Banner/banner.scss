@@ -56,6 +56,7 @@
 
     @include viewport-md {
       text-align: right;
+      align-self: center;
     }
   }
 
@@ -64,11 +65,23 @@
   &__title {
     font-weight: 900;
     font-size: 25px;
+    margin: 0 0 25px;
   }
 
   // .banner__legend
 
   &__legend {
+    font-size: 25px;
+  }
+
+  &__btn {
+    margin-top: 25px;
+    padding: 10px 45px;
+    color: white;
+    font-size: 25px;
+    font-weight: 900;
+    background: green;
+    border-radius: 6px;
   }
 }
 .container {
@@ -97,6 +110,4 @@ swiper-container {
   // --swiper-pagination-bullet-inactive-opacity: 1;
   // --swiper-pagination-bottom: 0rem;
   // --swiper-preloader-color: var(--swiper-theme-color);
- 
 }
-
