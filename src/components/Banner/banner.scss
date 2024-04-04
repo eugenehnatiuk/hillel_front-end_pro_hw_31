@@ -4,6 +4,7 @@
   // .banner__swiprer
 
   &__swiper {
+
   }
 
   // .banner__slide
@@ -84,6 +85,7 @@
     border-radius: 6px;
   }
 }
+
 .container {
 }
 
@@ -98,7 +100,7 @@ swiper-container {
   --swiper-navigation-color: #fff;
   --swiper-pagination-color: #fff;
   --swiper-pagination-position: absolute;
-  --swiper-pagination-bottom: -25px;
+  // --swiper-pagination-bottom: -25px;
   // --swiper-pagination-bullet-border-radius: 6px;
   // --swiper-pagination-bullet-horizontal-gap: 4px;
   // --swiper-pagination-bullet-vertical-gap: 4px;

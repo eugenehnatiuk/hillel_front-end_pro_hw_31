@@ -21,8 +21,7 @@ const Banner = () => {
     style.textContent = `
   .swiper {
     overflow: visible !important;
-  }
-`;
+  }`;
     if (swiperContainer) {
       swiperContainer.shadowRoot.appendChild(style);
     }
@@ -43,7 +42,7 @@ const Banner = () => {
   return (
     <div className="banner container">
       <swiper-container
-        autoplay-delay="3000"
+        autoplay-delay="5000"
         className="banner__swiper"
         loop="true"
         pagination="true"
