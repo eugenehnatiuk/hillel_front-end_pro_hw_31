@@ -24,6 +24,7 @@ const productList = [
       ],
       allergens: ['gluten', 'milk'],
     },
+    isActive: true,
   },
   {
     id: 2,
@@ -44,6 +45,7 @@ const productList = [
       ingredients: ['dough', 'tomato sauce', 'mozzarella cheese', 'basil'],
       allergens: ['gluten', 'milk'],
     },
+    isActive: true,
   },
   {
     id: 3,
@@ -70,6 +72,7 @@ const productList = [
       ],
       allergens: ['gluten', 'milk'],
     },
+    isActive: false,
   },
   {
     id: 4,
@@ -96,6 +99,7 @@ const productList = [
       ],
       allergens: ['gluten', 'milk'],
     },
+    isActive: true,
   },
   {
     id: 5,
@@ -124,6 +128,7 @@ const productList = [
       ],
       allergens: ['gluten', 'milk'],
     },
+    isActive: true,
   },
   {
     id: 6,
@@ -152,6 +157,7 @@ const productList = [
       ],
       allergens: ['gluten', 'milk'],
     },
+    isActive: true,
   },
   {
     id: 7,
@@ -179,6 +185,7 @@ const productList = [
       ],
       allergens: ['gluten', 'milk'],
     },
+    isActive: true,
   },
   {
     id: 8,
@@ -206,6 +213,7 @@ const productList = [
       ],
       allergens: ['gluten', 'milk'],
     },
+    isActive: true,
   },
   {
     id: 9,
@@ -236,6 +244,7 @@ const productList = [
       ],
       allergens: ['gluten', 'milk'],
     },
+    isActive: true,
   },
   {
     id: 10,
@@ -265,6 +274,7 @@ const productList = [
       ],
       allergens: ['gluten', 'milk'],
     },
+    isActive: true,
   },
   // Drinks
   {
@@ -292,6 +302,7 @@ const productList = [
       ],
       allergens: [],
     },
+    isActive: true,
   },
   {
     id: 12,
@@ -318,6 +329,7 @@ const productList = [
       ],
       allergens: [],
     },
+    isActive: true,
   },
   {
     id: 13,
@@ -343,6 +355,7 @@ const productList = [
       ],
       allergens: [],
     },
+    isActive: true,
   },
   {
     id: 14,
@@ -363,6 +376,7 @@ const productList = [
       ingredients: ['water', 'sugar', 'lemon juice', 'lemon zest'],
       allergens: [],
     },
+    isActive: true,
   },
   {
     id: 15,
@@ -383,6 +397,7 @@ const productList = [
       ingredients: ['orange juice', 'water', 'sugar'],
       allergens: [],
     },
+    isActive: true,
   },
   {
     id: 16,
@@ -403,6 +418,7 @@ const productList = [
       ingredients: ['tea', 'water', 'sugar', 'lemon juice'],
       allergens: [],
     },
+    isActive: true,
   },
 ];
 

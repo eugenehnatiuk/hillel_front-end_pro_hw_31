@@ -4,8 +4,15 @@ import { addOrder } from '../../Redux/handleOrderSlice.js';
 // import { useDispatch, useSelector } from 'react-redux';
 // import { setProductSize } from '../../Redux/sizeChangeSlice.js';
 
-const ProductCard = ({ id, name, sizes, image, prices, composition }) => {
-  
+const ProductCard = ({
+  id,
+  name,
+  sizes,
+  image,
+  prices,
+  composition,
+  isActive,
+}) => {
   const dispatch = useDispatch();
 
   /*   
@@ -33,10 +40,11 @@ const ProductCard = ({ id, name, sizes, image, prices, composition }) => {
   return (
     <>
       <div
-        className={`products__card card ${isFlipped ? 'is-flipped' : ''}`}
+        className={`products__card card ${isFlipped ? 'is-flipped' : ''} ${
+          isActive ? '' : 'inactive'
+        }`}
         key={id}
       >
-        {' '}
         {isFlipped ? (
           <div
             className="card__face card__face--back"
