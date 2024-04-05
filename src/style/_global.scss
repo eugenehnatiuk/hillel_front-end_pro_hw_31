@@ -1,11 +1,23 @@
+// main{
+//   overflow: hidden;
+// }
+
 body {
   font-family: 'Montserrat', sans-serif;
   font-weight: 400;
   position: relative;
+  // overflow: hidden;
+
+  &.basket-open {
+    overflow: hidden;
+  }
+
+  &.basket-closed {
+    overflow: visible;
+  }
 }
 
 .wrapper {
-  
 }
 
 .hidden {
@@ -22,7 +34,7 @@ body {
   width: 3px;
   height: 20px;
   border-radius: $radius-sm;
-//   border-radius: 50%;
+  //   border-radius: 50%;
   background: $accent-color;
 
   @include viewport-md {
@@ -30,9 +42,18 @@ body {
   }
 }
 
+.accent-letter {
+  font-weight: 900;
+  font-size: 25px;
+  color: $main-color;
+  @include viewport-md {
+    font-size: 30px;
+  }
+}
 
 .container {
   padding: 0 20px;
+  overflow: hidden;
   // від 0 до бескінечності
 
   @include viewport-md {

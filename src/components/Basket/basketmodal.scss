@@ -1,0 +1,194 @@
+@import '/src/style/vars';
+
+.basket-modal {
+  // .basket-modal__container
+
+  &__container {
+    position: fixed;
+    top: 0;
+    height: 100vh;
+    width: 100vw;
+    z-index: 100;
+    background: rgba(245, 245, 245, 0.7);
+    border-radius: 6px;
+    text-align: center;
+  }
+
+  // .basket-modal__title
+
+  &__title {
+    padding: 10px 0 0;
+    font-weight: 900;
+    margin: 0 0 25px;
+  }
+
+  // .basket-modal__content
+
+  &__content {
+    padding: 15px 15px 25px 15px;
+    max-width: 350px;
+    position: relative;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: white;
+    border-radius: 6px;
+
+    @include viewport-md {
+      max-width: 650px;
+    }
+
+    &--empty {
+      & p {
+        margin: 0 0 15px;
+      }
+      & a {
+        text-decoration: none;
+        font-weight: 900;
+        font-size: 18px;
+        color: green;
+      }
+    }
+  }
+
+  // .basket-modal__order
+
+  &__order {
+    max-width: 340px;
+    padding: 5px;
+    border-bottom: 1px dotted black;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 5px;
+    font-size: 14px;
+    margin: 0 0 15px;
+
+    @include viewport-md {
+      font-size: 17px;
+      min-width: 600px;
+    }
+  }
+
+  // .basket-modal__order-img
+
+  &__order-img {
+    width: 50px;
+    height: 50px;
+    border-radius: 6px;
+    overflow: hidden;
+    & img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+
+  &__item {
+    flex: 1 1 20%;
+  }
+
+  &__order-name {
+    font-weight: 900;
+    padding: 5px;
+  }
+  &__order-description-box {
+    padding: 5px;
+  }
+
+  &__order-description {
+    font-size: 12px;
+    padding: 0 0 5px;
+  }
+
+  // .basket-modal__order-size
+
+  &__order-size {
+    flex: 1 1 20%;
+
+    & span {
+      font-weight: 900;
+    }
+  }
+
+  // .basket-modal__order-counter
+
+  &__order-counter {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    gap: 3px;
+    flex: 1 1 20%;
+
+    & button {
+      cursor: pointer;
+      font-size: 15px;
+      background: none;
+    }
+  }
+
+  // .basket-modal__order-price
+
+  &__order-price {
+    font-weight: 900;
+    flex: 1 1 20%;
+  }
+
+  // .basket-modal__total
+
+  &__total {
+    margin: 0 0 20px;
+  }
+
+  &__total-title {
+    margin: 0 0 10px;
+    font-weight: 900;
+  }
+
+  // .basket-modal__total-count
+
+  &__total-count {
+  }
+
+  &__order-btn {
+    display: inline-block;
+    border-radius: 6px;
+    background: green;
+    padding: 10px 15px;
+    color: white;
+    font-weight: 900;
+    cursor: pointer;
+  }
+
+  &__close {
+    position: relative;
+    cursor: pointer;
+    width: 30px;
+    height: 30px;
+    margin-left: auto;
+    &::after,
+    &::before {
+      content: '';
+      position: absolute;
+      top: 16px;
+      left: 0;
+      right: 0;
+      height: 4px;
+      border-radius: $radius-sm;
+      background: $accent-color;
+      transform: rotate(-45deg);
+    }
+    &::after {
+      transform: rotate(45deg);
+    }
+    &.closed::after,
+    &.closed::before {
+      transform: rotate(0deg);
+      transition: transform 0.2s linear;
+    }
+  }
+}

@@ -1,0 +1,78 @@
+@import '/src/style/vars';
+
+.contacts {
+  // .contacts__section
+
+  &__section {
+    margin: 0 0 200px;
+  }
+
+  &__title {
+    font-size: 25px;
+    color: $main-color;
+    font-weight: 900;
+    margin: 50px 0;
+    text-align: center;
+  }
+
+  // .contacts__container
+
+  &__container {
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column-reverse;
+    gap: 25px;
+    justify-content: center;
+    align-items: center;
+
+    @include viewport-md {
+      flex-direction: row;
+    }
+  }
+
+  // .contacts__map
+
+  &__map {
+    overflow: hidden;
+    border-radius: 6px;
+  }
+
+  // .contacts__info
+
+  &__info {
+  }
+
+  // .contacts__title
+
+  // .contacts__list
+
+  &__list {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  // .contacts__list-item
+
+  &__list-item {
+  }
+
+  // .contacts__phone
+
+  &__phone {
+    text-decoration: none;
+    color: black;
+  }
+
+  // .contacts__adress
+
+  &__adress {
+  }
+
+  // .contacts__email
+
+  &__email {
+    text-decoration: none;
+    color: black;
+  }
+}

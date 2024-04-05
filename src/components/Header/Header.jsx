@@ -15,7 +15,7 @@ const Header = () => {
   const dispatch = useDispatch();
 
   useEffect(() => {
-    if (location.pathname === '/about') {
+    if (location.pathname === '/about' || location.pathname === '/contacts') {
       dispatch(bannerHide());
     } else {
       dispatch(bannerShow());

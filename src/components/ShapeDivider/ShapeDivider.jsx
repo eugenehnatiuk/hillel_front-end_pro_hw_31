@@ -1,8 +1,14 @@
 import React from 'react';
+import './shapedivider.scss';
 
-export const ShapeDevider = () => {
+export const ShapeDevider = ({ type }) => {
+
+  const className =
+    type === 'footer'
+      ? 'custom-shape-divider-bottom custom-shape-divider-bottom--footer'
+      : 'custom-shape-divider-bottom';
   return (
-    <div className="custom-shape-divider-bottom">
+    <div className={className}>
       <svg
         data-name="Layer 1"
         xmlns="http://www.w3.org/2000/svg"
