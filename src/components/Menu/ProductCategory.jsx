@@ -34,6 +34,7 @@ const ProductCategory = ({ productCategory }) => {
             image={product.image}
             composition={product.composition}
             description={product.description}
+            isActive={product.isActive}
           />
         ))}
     </div>
