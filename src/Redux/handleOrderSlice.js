@@ -5,9 +5,27 @@ const handleOderSlice = createSlice({
   initialState: {
     order: [],
     isOrderPlaced: false,
-    totalPrice: 0,
+    totalPrice: localStorage.getItem('totalPrice')
+      ? parseInt(localStorage.getItem('totalPrice'))
+      : 0,
+    showOrderForm: false,
+    clearOrderModal: false,
   },
   reducers: {
+    showClearOrer: (state) => {
+      state.clearOrderModal = true;
+    },
+    hideClearOrer: (state) => {
+      state.clearOrderModal = false;
+    },
+
+    showForm: (state) => {
+      state.showOrderForm = true;
+    },
+    hideForm: (state) => {
+      state.showOrderForm = false;
+    },
+
     setOrderPlaced: (state, action) => {
       state.isOrderPlaced = action.payload;
     },
@@ -36,6 +54,7 @@ const handleOderSlice = createSlice({
       );
       //
       localStorage.setItem('order', JSON.stringify(state.order));
+      localStorage.setItem('totalPrice', state.totalPrice.toString());
     },
 
     clearOrder: (state) => {
@@ -64,6 +83,7 @@ const handleOderSlice = createSlice({
         state.order[existingPizzaIndex].quantity -= 1;
         state.order[existingPizzaIndex].totalByIndexPrice -= price;
         state.totalPrice -= price;
+        localStorage.setItem('totalPrice', state.totalPrice.toString());
         if (state.order[existingPizzaIndex].quantity === 0) {
           state.order.splice(existingPizzaIndex, 1);
           if (state.order.length === 0) {
@@ -84,6 +104,7 @@ const handleOderSlice = createSlice({
         state.order[existingPizzaIndex].quantity += 1;
         state.order[existingPizzaIndex].totalByIndexPrice += price;
         state.totalPrice += price;
+        localStorage.setItem('totalPrice', state.totalPrice.toString());
       }
       localStorage.setItem('order', JSON.stringify(state.order));
     },
@@ -97,5 +118,9 @@ export const {
   decreaseQuantity,
   increaseQuantity,
   setOrderPlaced,
+  showForm,
+  hideForm,
+  showClearOrer,
+  hideClearOrer,
 } = handleOderSlice.actions;
 export default handleOderSlice.reducer;

@@ -1,13 +1,19 @@
 import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
+import {
+  clearOrderModal,
+  hideForm,
+  setOrderPlaced,
+} from '../../Redux/handleOrderSlice';
 
 const OrderForm = () => {
-    const dispatch = useDispatch();
+  const dispatch = useDispatch();
 
   const [formData, setFormData] = useState({
     name: '',
     address: '',
     email: '',
+    phoneNumber: '',
   });
 
   const handleChange = (e) => {
@@ -19,8 +25,17 @@ const OrderForm = () => {
   };
 
   const handleOrderButtonClick = () => {
-    dispatch(setOrderPlaced(true));
-    dispatch(clearOrder());
+    if (
+      formData.name.trim() &&
+      formData.address.trim() &&
+      formData.email.trim() &&
+      formData.phoneNumber.trim()
+    ) {
+      dispatch(setOrderPlaced(true));
+      dispatch(clearOrder());
+    } else {
+      alert('Please fill in all required fields.');
+    }
   };
 
   return (
@@ -49,7 +64,21 @@ const OrderForm = () => {
         value={formData.email}
         onChange={handleChange}
       />
-      <button className="order-form__btn" onClick={handleOrderButtonClick}>
+      <input
+        className="order-form__phone-number"
+        type="tel"
+        placeholder="Phone Number"
+        name="phoneNumber"
+        value={formData.phoneNumber}
+        onChange={handleChange}
+      />
+      <button className="order-form__btn" onClick={() => dispatch(hideForm())}>
+        Back
+      </button>
+      <button
+        className="order-form__btn order-form__btn-order"
+        onClick={handleOrderButtonClick}
+      >
         Order
       </button>
     </div>

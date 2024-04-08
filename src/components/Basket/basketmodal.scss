@@ -37,6 +37,7 @@
     align-items: center;
     background: white;
     border-radius: 6px;
+    overflow: hidden;
 
     @include viewport-md {
       max-width: 650px;
@@ -51,12 +52,39 @@
         font-weight: 900;
         font-size: 18px;
         color: green;
-        
       }
     }
   }
 
   // .basket-modal__order
+  &__order-container {
+    display: flex;
+    flex-direction: row;
+    gap: 12px;
+    width: 650px;
+    transform: translateX(162px);
+    transition: 0.3s;
+
+    @include viewport-md {
+      transform: translateX(16px);
+    }
+
+    &--translate {
+      transform: translateX(-170px);
+
+      @include viewport-md {
+        transform: translateX(-620px);
+      }
+    }
+  }
+
+  &__order-box {
+    flex: 1 0 320px;
+
+    @include viewport-md {
+      flex: 1 0 620px;
+    }
+  }
 
   &__order {
     max-width: 340px;
@@ -163,6 +191,15 @@
     color: white;
     font-weight: 900;
     cursor: pointer;
+    margin: 0 0 10px;
+  }
+
+  &__order-clear{
+    margin: 0 auto;
+    display: block;
+    background: none;
+    color: red;
+    cursor: pointer;
   }
 
   &__close {
@@ -191,5 +228,54 @@
       transform: rotate(0deg);
       transition: transform 0.2s linear;
     }
+  }
+}
+
+.order-form {
+  flex: 1 0 320px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 15px;
+  // .order-form__name
+
+  & input {
+    border: 1px solid black;
+    border-radius: 6px;
+    padding: 2px 5px;
+  }
+
+  &__name {
+  }
+
+  // .order-form__adress
+
+  &__adress {
+  }
+
+  // .order-form__email
+
+  &__email {
+  }
+
+  // .order-form__btn
+
+  &__btn {
+    display: inline-block;
+    border-radius: 6px;
+    background: green;
+    padding: 10px 15px;
+    color: white;
+    font-weight: 900;
+    cursor: pointer;
+  }
+
+  @include viewport-md {
+    flex: 1 0 620px;
+  }
+
+  &__btn-order {
+    background: $main-color;
   }
 }
