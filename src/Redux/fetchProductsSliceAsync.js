@@ -5,7 +5,7 @@ const fetchProductsAsync = createAsyncThunk(
   async (productCategory) => {
     // const _apiBase = `${location.protocol}//${location.host}`;
     // const response = await fetch(`${_apiBase}/products/?category=${productCategory}`);
-    
+
     const response = await fetch(`/products/?category=${productCategory}`);
 
     if (!response.ok) {
