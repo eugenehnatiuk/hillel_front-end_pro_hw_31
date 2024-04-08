@@ -1,22 +1,15 @@
 import { createAsyncThunk } from '@reduxjs/toolkit';
 
-const fetchPromoAsync = createAsyncThunk(
-  'promo/fetchPromo',
-  async (_, thunkAPI) => {
-    try {
-      const _apiBase = `${location.protocol}//${location.host}`;
-      const response = await fetch(`${_apiBase}/promo`);
+const fetchPromoAsync = createAsyncThunk('promo/fetchPromo', async () => {
 
-      if (!response.ok) {
-        throw new Error(`Failed to fetch products by ${promoCategory}`);
-      }
+  const response = await fetch(`http://127.0.0.1:7000/promo`);
 
-      const data = await response.json();
-      return data;
-    } catch (error) {
-      return `${error}`;
-    }
+  if (!response.ok) {
+    throw new Error(`Failed to fetch promo`);
   }
-);
+
+  const data = await response.json();
+  return data;
+});
 
 export default fetchPromoAsync;

@@ -8,8 +8,7 @@ const productList = [
       { size: 'L', value: 'Large (50cm)' },
     ],
     prices: [300, 420],
-    image:
-      'https://lviv.veteranopizza.com/image/cache/catalog/pizza/peperoni-800x800.jpg',
+    image: '/images/prod_list/papperoni_1.jpg',
     composition: {
       energy: '2100 kJ (500 kcal)',
       fat: '22 g',
@@ -35,8 +34,7 @@ const productList = [
       { size: 'L', value: 'Large (50cm)' },
     ],
     prices: [250, 300],
-    image:
-      'https://img.sunset02.com/sites/default/files/image/recipes/su/10/02/pizzetta-margherita-pizza-su-x.jpg',
+    image: '/images/prod_list/margarita_1.jpg',
     composition: {
       energy: '1800 kJ (430 kcal)',
       fat: '18 g',
@@ -56,8 +54,7 @@ const productList = [
       { size: 'L', value: 'Large (50cm)' },
     ],
     prices: [280, 350],
-    image:
-      'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ7EW9SMdc42JsNGoGllE0R7OWmo2F2JIubsQ&usqp=CAU',
+    image: '/images/prod_list/Hawaiian_1.jpg',
     composition: {
       energy: '1900 kJ (450 kcal)',
       fat: '20 g',
@@ -83,8 +80,7 @@ const productList = [
       { size: 'L', value: 'Large (50cm)' },
     ],
     prices: [320, 400],
-    image:
-      'https://cdn.apartmenttherapy.info/image/upload/f_auto,q_auto:eco,c_fill,g_auto,w_1500,ar_3:2/k%2Farchive%2Fbd84ba2c08f32a70c1c3638c511dd271d365c611',
+    image: '/images/prod_list/BBQ _Chicken_1.jpg',
     composition: {
       energy: '2200 kJ (520 kcal)',
       fat: '24 g',
@@ -110,8 +106,7 @@ const productList = [
       { size: 'L', value: 'Large (50cm)' },
     ],
     prices: [270, 350],
-    image:
-      'https://www.orchidsandsweettea.com/wp-content/uploads/2019/05/Veggie-Pizza-2-of-5-e1691215701129.jpg',
+    image: '/images/prod_list/Vegetarian_1.webp',
     composition: {
       energy: '2000 kJ (480 kcal)',
       fat: '20 g',
@@ -139,8 +134,7 @@ const productList = [
       { size: 'L', value: 'Large (50cm)' },
     ],
     prices: [330, 420],
-    image:
-      'https://emeals-menubuilder.s3.amazonaws.com/v1/recipes/781180/pictures/large_meat-lovers-pizza.jpeg',
+    image: '/images/prod_list/Meat_Lover_1.jpeg',
     composition: {
       energy: '2300 kJ (550 kcal)',
       fat: '26 g',
@@ -168,8 +162,7 @@ const productList = [
       { size: 'L', value: 'Large (50cm)' },
     ],
     prices: [290, 360],
-    image:
-      'https://au.gozney.com/cdn/shop/articles/Four_Cheese_Pizza_Feng_Chen_-_Large1.jpg?v=1696535135',
+    image: '/images/prod_list/Four_Cheese_1.jpg',
     composition: {
       energy: '1900 kJ (460 kcal)',
       fat: '22 g',
@@ -196,8 +189,7 @@ const productList = [
       { size: 'L', value: 'Large (50cm)' },
     ],
     prices: [320, 400],
-    image:
-      'https://thecozycook.com/wp-content/uploads/2023/08/Buffalo-Chicken-Pizza.jpg',
+    image: '/images/prod_list/Buffalo_Chicken_1.jpg',
     composition: {
       energy: '2200 kJ (530 kcal)',
       fat: '24 g',
@@ -224,8 +216,7 @@ const productList = [
       { size: 'L', value: 'Large (50cm)' },
     ],
     prices: [340, 430],
-    image:
-      'https://www.southernliving.com/thmb/3x3cJaiOvQ8-3YxtMQX0vvh1hQw=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/2652401_QFSSL_SupremePizza_00072-d910a935ba7d448e8c7545a963ed7101.jpg',
+    image: '/images/prod_list/Supreme_1.jpg',
     composition: {
       energy: '2400 kJ (570 kcal)',
       fat: '28 g',
@@ -255,8 +246,7 @@ const productList = [
       { size: 'L', value: 'Large (50cm)' },
     ],
     prices: [300, 370],
-    image:
-      'https://suebeehomemaker.com/wp-content/uploads/2023/09/Godfathers-taco-pizza-recipecard.jpg',
+    image: '/images/prod_list/Taco_1.jpg',
     composition: {
       energy: '2000 kJ (480 kcal)',
       fat: '22 g',
@@ -286,8 +276,7 @@ const productList = [
       { size: 'L', value: 'Large (500ml)' },
     ],
     prices: [30, 50],
-    image:
-      'https://assets-global.website-files.com/63d3e0aead95e54ffdce9095/63f595ed207f7c82a1a8d440_coca-cola%20(1).webp',
+    image: '/images/prod_list/cola_1.webp',
     composition: {
       energy: '180 kJ (42 kcal)',
       fat: '0 g',
@@ -313,8 +302,7 @@ const productList = [
       { size: 'L', value: 'Large (500ml)' },
     ],
     prices: [30, 50],
-    image:
-      'https://static.dezeen.com/uploads/2023/04/fanta-rebrand-global-identity-coca-cola-jones-knowles-ritchie_dezeen_2364_col_20.jpg',
+    image: '/images/prod_list/fanta_1.jpg',
     composition: {
       energy: '180 kJ (42 kcal)',
       fat: '0 g',
@@ -340,8 +328,7 @@ const productList = [
       { size: 'L', value: 'Large (500ml)' },
     ],
     prices: [30, 50],
-    image:
-      'https://hips.hearstapps.com/hmg-prod/images/sprite-6401deca78a0d.png?crop=0.888888888888889xw:1xh;center,top&resize=1200:*',
+    image: '/images/prod_list/sprite_1.png',
     composition: {
       energy: '160 kJ (38 kcal)',
       fat: '0 g',
@@ -366,8 +353,7 @@ const productList = [
       { size: 'L', value: 'Large (500ml)' },
     ],
     prices: [25, 40],
-    image:
-      'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQKccAKio584Nxpuk3pfBUlBMXNjPfQgbvzXRlM0HT-1Q&s',
+    image: '/images/prod_list/Lemonade_1.jpg',
     composition: {
       energy: '160 kJ (38 kcal)',
       fat: '0 g',
@@ -387,8 +373,7 @@ const productList = [
       { size: 'L', value: 'Large (500ml)' },
     ],
     prices: [40, 80],
-    image:
-      'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQi2Z3x0hoi9g1WrC0Ck-KgL-RE5c-aFtcquEkahvwTkQ&s',
+    image: '/images/prod_list/OrangeJuice_1.jpg',
     composition: {
       energy: '160 kJ (38 kcal)',
       fat: '0 g',
@@ -408,8 +393,7 @@ const productList = [
       { size: 'L', value: 'Large (500ml)' },
     ],
     prices: [45, 60],
-    image:
-      'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQZ6CudLDjWKp3tmuZT0uipZFuTiaUBWJ5cymL1oEoN_w&s',
+    image: '/images/prod_list/IcedTea_1.jpg',
     composition: {
       energy: '80 kJ (19 kcal)',
       fat: '0 g',

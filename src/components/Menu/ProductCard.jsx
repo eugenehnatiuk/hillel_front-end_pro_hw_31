@@ -26,12 +26,16 @@ const ProductCard = ({
   const [selectedSize, setSize] = useState('S');
   const [isFlipped, setFlipped] = useState(false);
 
+  const selectedSizeIndex = sizes.findIndex(
+    (item) => item.size === selectedSize
+  );
+
   const addToBasket = () => {
     const orderItem = {
       id,
       name,
       size: selectedSize,
-      price: selectedSize === 'S' ? prices[0] : prices[1],
+      price: prices[selectedSizeIndex],
       image,
     };
 

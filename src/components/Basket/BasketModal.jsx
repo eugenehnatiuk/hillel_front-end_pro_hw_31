@@ -9,25 +9,16 @@ import {
   setOrderPlaced,
   increaseQuantity,
 } from '../../Redux/handleOrderSlice.js';
-import { setTotalPrice } from '../../Redux/totalPriceChangeSlice.js';
+
 
 const BasketModal = () => {
   const dispatch = useDispatch();
 
   const basketOpen = useSelector((state) => state.basketmodal.isOpen);
   const order = useSelector((state) => state.handleOrder.order);
-  const totalPrice = useSelector((state) => state.totalPrice.value);
+  const totalPrice = useSelector((state) => state.handleOrder.totalPrice);
   const isOrderPlaced = useSelector((state) => state.handleOrder.isOrderPlaced);
-
-  useEffect(() => {
-    const newTotalPrice = order.reduce(
-      (acc, { totalByIndexPrice }) => acc + totalByIndexPrice,
-      0
-    );
-    if (newTotalPrice !== totalPrice) {
-      dispatch(setTotalPrice(newTotalPrice));
-    }
-  }, [order]);
+ 
 
   useEffect(() => {
     dispatch(setOrderPlaced(false));

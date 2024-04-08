@@ -8,7 +8,6 @@ import logger from 'redux-logger';
 import BannerMenu from '../Menu/MenuBanner.jsx';
 import closeMenuSlice from '../../Redux/closeMenuSlice.js';
 import hideBannerSlice from '../../Redux/hideBannerSlice.js';
-// import sizeChangeSlice from '../../Redux/sizeChangeSlice.js';
 
 import Menu from '../Menu/Menu.jsx';
 import Contacts from '../Contacts/Contacts.jsx';
@@ -18,21 +17,18 @@ import ProductCategory from '../Menu/ProductCategory.jsx';
 import productsByCategorySlice from '../../Redux/productsByCategorySlice.js';
 import basketModalSlice from '../../Redux/basketModalSlice.js';
 import handleOrderSlice from '../../Redux/handleOrderSlice.js';
-import totalPriceChangeSlice from '../../Redux/totalPriceChangeSlice.js';
 import Main from '../Main/Main.jsx';
 import promoSlice from '../../Redux/promoSlice.js';
 
-// enableMapSet();
+
 
 const store = configureStore({
   reducer: {
     closeMenu: closeMenuSlice,
     hideBanner: hideBannerSlice,
-    // productSize: sizeChangeSlice,
     productsByCategory: productsByCategorySlice,
     basketmodal: basketModalSlice,
     handleOrder: handleOrderSlice,
-    totalPrice: totalPriceChangeSlice,
     promo: promoSlice,
   },
   middleware: () => [thunk, logger],
