@@ -2,7 +2,7 @@ import { createAsyncThunk } from '@reduxjs/toolkit';
 
 const fetchPromoAsync = createAsyncThunk('promo/fetchPromo', async () => {
 
-  const response = await fetch(`http://127.0.0.1:7000/promo`);
+  const response = await fetch(`/promo`);
 
   if (!response.ok) {
     throw new Error(`Failed to fetch promo`);

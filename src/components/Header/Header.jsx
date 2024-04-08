@@ -31,7 +31,7 @@ const Header = () => {
             <HeaderBox />
           </div>
         </header>
-        {isHidden ? '' : <Banner />}
+        {!isHidden &&  <Banner />}
         <ShapeDevider />
       </div>
     </>
