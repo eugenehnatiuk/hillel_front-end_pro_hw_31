@@ -24,19 +24,30 @@ const ProductCategory = ({ productCategory }) => {
   return (
     <div className="products container">
       {productsList &&
-        productsList.map((product) => (
-          <ProductCard
-            key={product.id}
-            id={product.id}
-            name={product.name}
-            sizes={product.sizes}
-            prices={product.prices}
-            image={product.image}
-            composition={product.composition}
-            description={product.description}
-            isActive={product.isActive}
-          />
-        ))}
+        productsList.map(
+          ({
+            id,
+            name,
+            sizes,
+            prices,
+            image,
+            composition,
+            description,
+            isActive,
+          }) => (
+            <ProductCard
+              key={id}
+              id={id}
+              name={name}
+              sizes={sizes}
+              prices={prices}
+              image={image}
+              composition={composition}
+              description={description}
+              isActive={isActive}
+            />
+          )
+        )}
     </div>
   );
 };

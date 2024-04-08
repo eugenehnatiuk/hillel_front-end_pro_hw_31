@@ -29,9 +29,11 @@ const handleOderSlice = createSlice({
     },
 
     addOrder: (state, action) => {
+      const {id, size } = action.payload
+
       const existingPizzaIndex = state.order.findIndex(
         (item) =>
-          item.id === action.payload.id && item.size === action.payload.size
+          item.id === id && item.size === size
       );
 
       if (existingPizzaIndex !== -1) {
@@ -71,6 +73,7 @@ const handleOderSlice = createSlice({
 
     decreaseQuantity: (state, action) => {
       const { id, size, price } = action.payload;
+
       const existingPizzaIndex = state.order.findIndex(
         (item) => item.id === id && item.size === size
       );
@@ -96,6 +99,7 @@ const handleOderSlice = createSlice({
 
     increaseQuantity: (state, action) => {
       const { id, size, price } = action.payload;
+      
       const existingPizzaIndex = state.order.findIndex(
         (item) => item.id === id && item.size === size
       );
