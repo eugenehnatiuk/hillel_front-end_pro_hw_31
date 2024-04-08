@@ -1,6 +1,6 @@
 import React from 'react';
-import { useDispatch } from 'react-redux';
 import './confirmationModal.scss';
+import { useDispatch } from 'react-redux';
 import { clearOrder, hideClearOrer } from '../../Redux/handleOrderSlice.js';
 
 const ConfirmationModal = () => {
