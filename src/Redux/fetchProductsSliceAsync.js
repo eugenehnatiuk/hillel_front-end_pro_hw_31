@@ -2,7 +2,7 @@ import { createAsyncThunk } from '@reduxjs/toolkit';
 
 const fetchProductsAsync = createAsyncThunk(
   'products/fetchProducts',
-  async (productCategory, thunkAPI) => {
+  async (productCategory) => {
     // const _apiBase = `${location.protocol}//${location.host}`;
     const response = await fetch(`/products/?category=${productCategory}`);
     
