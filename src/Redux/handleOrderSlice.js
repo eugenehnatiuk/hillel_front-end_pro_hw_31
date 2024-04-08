@@ -4,10 +4,8 @@ const handleOderSlice = createSlice({
   name: 'handleOrder',
   initialState: {
     order: [],
+    totalPrice: JSON.parse(localStorage.getItem('totalPrice')),
     isOrderPlaced: false,
-    totalPrice: localStorage.getItem('totalPrice')
-      ? parseInt(localStorage.getItem('totalPrice'))
-      : 0,
     showOrderForm: false,
     clearOrderModal: false,
   },
@@ -54,7 +52,8 @@ const handleOderSlice = createSlice({
       );
       //
       localStorage.setItem('order', JSON.stringify(state.order));
-      localStorage.setItem('totalPrice', state.totalPrice.toString());
+      localStorage.setItem('totalPrice', JSON.stringify(state.totalPrice));
+  
     },
 
     clearOrder: (state) => {
